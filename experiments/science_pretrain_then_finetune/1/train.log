@@ -1,0 +1,274 @@
+INFO - 04/09/24 17:30:06 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/09/24 17:30:06 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\science_pretrain_then_finetune\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: science_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: science
+                                     usechar: False
+INFO - 04/09/24 17:30:06 - 0:00:00 - The experiment will be stored in experiments\science_pretrain_then_finetune\1
+                                     
+INFO - 04/09/24 17:30:06 - 0:00:00 - Load training set data
+INFO - 04/09/24 17:30:06 - 0:00:00 - Load development set data
+INFO - 04/09/24 17:30:07 - 0:00:00 - Load test set data
+INFO - 04/09/24 17:30:07 - 0:00:01 - label distribution for training set
+INFO - 04/09/24 17:30:07 - 0:00:01 - {'chemicalcompound': 0.06697674418604652, 'scientist': 0.11813953488372093, 'location': 0.06046511627906977, 'astronomicalobject': 0.11255813953488372, 'misc': 0.1572093023255814, 'protein': 0.0641860465116279, 'person': 0.09023255813953489, 'university': 0.052093023255813956, 'theory': 0.0074418604651162795, 'enzyme': 0.020465116279069766, 'organisation': 0.10976744186046512, 'award': 0.052093023255813956, 'country': 0.008372093023255815, 'event': 0.018604651162790697, 'discipline': 0.020465116279069766, 'chemicalelement': 0.014883720930232559, 'academicjournal': 0.026046511627906978}
+INFO - 04/09/24 17:30:07 - 0:00:01 - label distribution for dev set
+INFO - 04/09/24 17:30:07 - 0:00:01 - {'organisation': 0.1095350669818755, 'academicjournal': 0.058707643814026794, 'scientist': 0.12923561859732072, 'chemicalcompound': 0.0760441292356186, 'misc': 0.14184397163120568, 'university': 0.054373522458628844, 'discipline': 0.01615445232466509, 'location': 0.05594956658786446, 'protein': 0.03979511426319937, 'astronomicalobject': 0.14696611505122142, 'chemicalelement': 0.009062253743104806, 'event': 0.014184397163120567, 'person': 0.06028368794326241, 'award': 0.055161544523246654, 'enzyme': 0.018912529550827423, 'country': 0.01103230890464933, 'theory': 0.0027580772261623326}
+INFO - 04/09/24 17:30:07 - 0:00:01 - label distribution for test set
+INFO - 04/09/24 17:30:07 - 0:00:01 - {'organisation': 0.08837811589511169, 'astronomicalobject': 0.10909679507931369, 'misc': 0.16833926837164132, 'chemicalcompound': 0.05179669796050502, 'protein': 0.05050178051149239, 'person': 0.07445775331822596, 'university': 0.04208481709291033, 'scientist': 0.15247652962123664, 'enzyme': 0.02589834898025251, 'award': 0.04726448688896083, 'event': 0.010035610229847848, 'location': 0.05503399158303658, 'country': 0.008740692780835222, 'academicjournal': 0.058271285205568145, 'chemicalelement': 0.02751699579151829, 'discipline': 0.023632243444480415, 'theory': 0.006474587245063127}
+INFO - 04/09/24 17:30:07 - 0:00:01 - train size: 200; dev size 450; test size: 543;
+DEBUG - 04/09/24 17:30:07 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/09/24 17:30:08 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/09/24 17:30:18 - 0:00:12 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/09/24 17:30:18 - 0:00:12 - Pretraining on conll2003 NER dataset ...
+INFO - 04/09/24 17:30:18 - 0:00:12 - ============== epoch 0 ==============
+INFO - 04/09/24 17:31:52 - 0:01:46 - Finish training epoch 0. loss: 0.1167
+INFO - 04/09/24 17:31:52 - 0:01:46 - ============== Evaluate epoch 0 on Dev Set ==============
+INFO - 04/09/24 17:31:59 - 0:01:53 - Evaluate on Dev Set. F1: 93.6979.
+INFO - 04/09/24 17:31:59 - 0:01:53 - Found better model!!
+INFO - 04/09/24 17:31:59 - 0:01:53 - ============== epoch 1 ==============
+INFO - 04/09/24 17:33:38 - 0:03:32 - Finish training epoch 1. loss: 0.0295
+INFO - 04/09/24 17:33:38 - 0:03:32 - ============== Evaluate epoch 1 on Dev Set ==============
+INFO - 04/09/24 17:33:45 - 0:03:38 - Evaluate on Dev Set. F1: 93.9498.
+INFO - 04/09/24 17:33:45 - 0:03:38 - Found better model!!
+INFO - 04/09/24 17:33:45 - 0:03:38 - ============== Evaluate on Test Set ==============
+INFO - 04/09/24 17:33:51 - 0:03:45 - Evaluate on Test Set. F1: 89.1079.
+
+INFO - 04/09/24 17:33:51 - 0:03:45 - Training on target domain ...
+INFO - 04/09/24 17:33:51 - 0:03:45 - ============== epoch 0 ==============
+INFO - 04/09/24 17:33:53 - 0:03:47 - Finish training epoch 0. loss: 1.4647
+INFO - 04/09/24 17:33:53 - 0:03:47 - ============== Evaluate epoch 0 on Train Set ==============
+INFO - 04/09/24 17:33:54 - 0:03:48 - Evaluate on Train Set. F1: 35.5346.
+INFO - 04/09/24 17:33:54 - 0:03:48 - ============== Evaluate epoch 0 on Dev Set ==============
+INFO - 04/09/24 17:33:56 - 0:03:50 - Evaluate on Dev Set. F1: 34.9688.
+INFO - 04/09/24 17:33:56 - 0:03:50 - ============== Evaluate epoch 0 on Test Set ==============
+INFO - 04/09/24 17:33:58 - 0:03:52 - Evaluate on Test Set. F1: 29.8562.
+INFO - 04/09/24 17:33:58 - 0:03:52 - Found better model!!
+INFO - 04/09/24 17:33:58 - 0:03:52 - ============== epoch 1 ==============
+INFO - 04/09/24 17:34:00 - 0:03:54 - Finish training epoch 1. loss: 0.6844
+INFO - 04/09/24 17:34:00 - 0:03:54 - ============== Evaluate epoch 1 on Train Set ==============
+INFO - 04/09/24 17:34:01 - 0:03:55 - Evaluate on Train Set. F1: 52.8236.
+INFO - 04/09/24 17:34:01 - 0:03:55 - ============== Evaluate epoch 1 on Dev Set ==============
+INFO - 04/09/24 17:34:03 - 0:03:56 - Evaluate on Dev Set. F1: 44.4322.
+INFO - 04/09/24 17:34:03 - 0:03:56 - ============== Evaluate epoch 1 on Test Set ==============
+INFO - 04/09/24 17:34:05 - 0:03:59 - Evaluate on Test Set. F1: 42.9200.
+INFO - 04/09/24 17:34:05 - 0:03:59 - Found better model!!
+INFO - 04/09/24 17:34:05 - 0:03:59 - ============== epoch 2 ==============
+INFO - 04/09/24 17:34:07 - 0:04:01 - Finish training epoch 2. loss: 0.3592
+INFO - 04/09/24 17:34:07 - 0:04:01 - ============== Evaluate epoch 2 on Train Set ==============
+INFO - 04/09/24 17:34:08 - 0:04:02 - Evaluate on Train Set. F1: 76.8539.
+INFO - 04/09/24 17:34:08 - 0:04:02 - ============== Evaluate epoch 2 on Dev Set ==============
+INFO - 04/09/24 17:34:10 - 0:04:04 - Evaluate on Dev Set. F1: 60.4807.
+INFO - 04/09/24 17:34:10 - 0:04:04 - ============== Evaluate epoch 2 on Test Set ==============
+INFO - 04/09/24 17:34:12 - 0:04:06 - Evaluate on Test Set. F1: 55.8475.
+INFO - 04/09/24 17:34:12 - 0:04:06 - Found better model!!
+INFO - 04/09/24 17:34:12 - 0:04:06 - ============== epoch 3 ==============
+INFO - 04/09/24 17:34:14 - 0:04:08 - Finish training epoch 3. loss: 0.1853
+INFO - 04/09/24 17:34:14 - 0:04:08 - ============== Evaluate epoch 3 on Train Set ==============
+INFO - 04/09/24 17:34:15 - 0:04:09 - Evaluate on Train Set. F1: 89.9225.
+INFO - 04/09/24 17:34:15 - 0:04:09 - ============== Evaluate epoch 3 on Dev Set ==============
+INFO - 04/09/24 17:34:17 - 0:04:11 - Evaluate on Dev Set. F1: 65.5045.
+INFO - 04/09/24 17:34:17 - 0:04:11 - ============== Evaluate epoch 3 on Test Set ==============
+INFO - 04/09/24 17:34:19 - 0:04:13 - Evaluate on Test Set. F1: 60.9573.
+INFO - 04/09/24 17:34:19 - 0:04:13 - Found better model!!
+INFO - 04/09/24 17:34:19 - 0:04:13 - ============== epoch 4 ==============
+INFO - 04/09/24 17:34:22 - 0:04:15 - Finish training epoch 4. loss: 0.1062
+INFO - 04/09/24 17:34:22 - 0:04:15 - ============== Evaluate epoch 4 on Train Set ==============
+INFO - 04/09/24 17:34:22 - 0:04:16 - Evaluate on Train Set. F1: 92.9590.
+INFO - 04/09/24 17:34:22 - 0:04:16 - ============== Evaluate epoch 4 on Dev Set ==============
+INFO - 04/09/24 17:34:24 - 0:04:18 - Evaluate on Dev Set. F1: 69.2134.
+INFO - 04/09/24 17:34:24 - 0:04:18 - ============== Evaluate epoch 4 on Test Set ==============
+INFO - 04/09/24 17:34:26 - 0:04:20 - Evaluate on Test Set. F1: 63.3846.
+INFO - 04/09/24 17:34:26 - 0:04:20 - Found better model!!
+INFO - 04/09/24 17:34:26 - 0:04:20 - ============== epoch 5 ==============
+INFO - 04/09/24 17:34:28 - 0:04:22 - Finish training epoch 5. loss: 0.0604
+INFO - 04/09/24 17:34:28 - 0:04:22 - ============== Evaluate epoch 5 on Train Set ==============
+INFO - 04/09/24 17:34:29 - 0:04:23 - Evaluate on Train Set. F1: 96.8519.
+INFO - 04/09/24 17:34:29 - 0:04:23 - ============== Evaluate epoch 5 on Dev Set ==============
+INFO - 04/09/24 17:34:31 - 0:04:25 - Evaluate on Dev Set. F1: 69.5604.
+INFO - 04/09/24 17:34:31 - 0:04:25 - ============== Evaluate epoch 5 on Test Set ==============
+INFO - 04/09/24 17:34:33 - 0:04:27 - Evaluate on Test Set. F1: 65.2489.
+INFO - 04/09/24 17:34:33 - 0:04:27 - Found better model!!
+INFO - 04/09/24 17:34:33 - 0:04:27 - ============== epoch 6 ==============
+INFO - 04/09/24 17:34:35 - 0:04:29 - Finish training epoch 6. loss: 0.0340
+INFO - 04/09/24 17:34:35 - 0:04:29 - ============== Evaluate epoch 6 on Train Set ==============
+INFO - 04/09/24 17:34:36 - 0:04:30 - Evaluate on Train Set. F1: 98.7471.
+INFO - 04/09/24 17:34:36 - 0:04:30 - ============== Evaluate epoch 6 on Dev Set ==============
+INFO - 04/09/24 17:34:38 - 0:04:31 - Evaluate on Dev Set. F1: 69.6688.
+INFO - 04/09/24 17:34:38 - 0:04:31 - ============== Evaluate epoch 6 on Test Set ==============
+INFO - 04/09/24 17:34:40 - 0:04:33 - Evaluate on Test Set. F1: 63.1675.
+INFO - 04/09/24 17:34:40 - 0:04:33 - Found better model!!
+INFO - 04/09/24 17:34:40 - 0:04:33 - ============== epoch 7 ==============
+INFO - 04/09/24 17:34:42 - 0:04:36 - Finish training epoch 7. loss: 0.0246
+INFO - 04/09/24 17:34:42 - 0:04:36 - ============== Evaluate epoch 7 on Train Set ==============
+INFO - 04/09/24 17:34:43 - 0:04:37 - Evaluate on Train Set. F1: 99.1636.
+INFO - 04/09/24 17:34:43 - 0:04:37 - ============== Evaluate epoch 7 on Dev Set ==============
+INFO - 04/09/24 17:34:44 - 0:04:38 - Evaluate on Dev Set. F1: 70.8357.
+INFO - 04/09/24 17:34:44 - 0:04:38 - ============== Evaluate epoch 7 on Test Set ==============
+INFO - 04/09/24 17:34:46 - 0:04:40 - Evaluate on Test Set. F1: 66.0894.
+INFO - 04/09/24 17:34:46 - 0:04:40 - Found better model!!
+INFO - 04/09/24 17:34:46 - 0:04:40 - ============== epoch 8 ==============
+INFO - 04/09/24 17:34:49 - 0:04:43 - Finish training epoch 8. loss: 0.0203
+INFO - 04/09/24 17:34:49 - 0:04:43 - ============== Evaluate epoch 8 on Train Set ==============
+INFO - 04/09/24 17:34:50 - 0:04:43 - Evaluate on Train Set. F1: 99.3500.
+INFO - 04/09/24 17:34:50 - 0:04:43 - ============== Evaluate epoch 8 on Dev Set ==============
+INFO - 04/09/24 17:34:51 - 0:04:45 - Evaluate on Dev Set. F1: 70.8065.
+INFO - 04/09/24 17:34:51 - 0:04:45 - ============== Evaluate epoch 8 on Test Set ==============
+INFO - 04/09/24 17:34:53 - 0:04:47 - Evaluate on Test Set. F1: 65.7743.
+INFO - 04/09/24 17:34:53 - 0:04:47 - No better model found (1/8)
+INFO - 04/09/24 17:34:53 - 0:04:47 - ============== epoch 9 ==============
+INFO - 04/09/24 17:34:56 - 0:04:49 - Finish training epoch 9. loss: 0.0133
+INFO - 04/09/24 17:34:56 - 0:04:49 - ============== Evaluate epoch 9 on Train Set ==============
+INFO - 04/09/24 17:34:56 - 0:04:50 - Evaluate on Train Set. F1: 99.8141.
+INFO - 04/09/24 17:34:56 - 0:04:50 - ============== Evaluate epoch 9 on Dev Set ==============
+INFO - 04/09/24 17:34:58 - 0:04:52 - Evaluate on Dev Set. F1: 70.7455.
+INFO - 04/09/24 17:34:58 - 0:04:52 - ============== Evaluate epoch 9 on Test Set ==============
+INFO - 04/09/24 17:35:00 - 0:04:54 - Evaluate on Test Set. F1: 65.7509.
+INFO - 04/09/24 17:35:00 - 0:04:54 - No better model found (2/8)
+INFO - 04/09/24 17:35:00 - 0:04:54 - ============== epoch 10 ==============
+INFO - 04/09/24 17:35:03 - 0:04:56 - Finish training epoch 10. loss: 0.0110
+INFO - 04/09/24 17:35:03 - 0:04:56 - ============== Evaluate epoch 10 on Train Set ==============
+INFO - 04/09/24 17:35:03 - 0:04:57 - Evaluate on Train Set. F1: 99.7212.
+INFO - 04/09/24 17:35:03 - 0:04:57 - ============== Evaluate epoch 10 on Dev Set ==============
+INFO - 04/09/24 17:35:05 - 0:04:59 - Evaluate on Dev Set. F1: 70.4225.
+INFO - 04/09/24 17:35:05 - 0:04:59 - ============== Evaluate epoch 10 on Test Set ==============
+INFO - 04/09/24 17:35:07 - 0:05:01 - Evaluate on Test Set. F1: 65.7513.
+INFO - 04/09/24 17:35:07 - 0:05:01 - No better model found (3/8)
+INFO - 04/09/24 17:35:07 - 0:05:01 - ============== epoch 11 ==============
+INFO - 04/09/24 17:35:09 - 0:05:03 - Finish training epoch 11. loss: 0.0085
+INFO - 04/09/24 17:35:09 - 0:05:03 - ============== Evaluate epoch 11 on Train Set ==============
+INFO - 04/09/24 17:35:10 - 0:05:04 - Evaluate on Train Set. F1: 100.0000.
+INFO - 04/09/24 17:35:10 - 0:05:04 - ============== Evaluate epoch 11 on Dev Set ==============
+INFO - 04/09/24 17:35:12 - 0:05:06 - Evaluate on Dev Set. F1: 70.9593.
+INFO - 04/09/24 17:35:12 - 0:05:06 - ============== Evaluate epoch 11 on Test Set ==============
+INFO - 04/09/24 17:35:14 - 0:05:08 - Evaluate on Test Set. F1: 65.2602.
+INFO - 04/09/24 17:35:14 - 0:05:08 - Found better model!!
+INFO - 04/09/24 17:35:14 - 0:05:08 - ============== epoch 12 ==============
+INFO - 04/09/24 17:35:16 - 0:05:10 - Finish training epoch 12. loss: 0.0062
+INFO - 04/09/24 17:35:16 - 0:05:10 - ============== Evaluate epoch 12 on Train Set ==============
+INFO - 04/09/24 17:35:17 - 0:05:11 - Evaluate on Train Set. F1: 100.0000.
+INFO - 04/09/24 17:35:17 - 0:05:11 - ============== Evaluate epoch 12 on Dev Set ==============
+INFO - 04/09/24 17:35:19 - 0:05:13 - Evaluate on Dev Set. F1: 70.8569.
+INFO - 04/09/24 17:35:19 - 0:05:13 - ============== Evaluate epoch 12 on Test Set ==============
+INFO - 04/09/24 17:35:21 - 0:05:15 - Evaluate on Test Set. F1: 65.5559.
+INFO - 04/09/24 17:35:21 - 0:05:15 - No better model found (1/8)
+INFO - 04/09/24 17:35:21 - 0:05:15 - ============== epoch 13 ==============
+INFO - 04/09/24 17:35:23 - 0:05:17 - Finish training epoch 13. loss: 0.0098
+INFO - 04/09/24 17:35:23 - 0:05:17 - ============== Evaluate epoch 13 on Train Set ==============
+INFO - 04/09/24 17:35:24 - 0:05:18 - Evaluate on Train Set. F1: 99.6749.
+INFO - 04/09/24 17:35:24 - 0:05:18 - ============== Evaluate epoch 13 on Dev Set ==============
+INFO - 04/09/24 17:35:25 - 0:05:19 - Evaluate on Dev Set. F1: 70.8279.
+INFO - 04/09/24 17:35:25 - 0:05:19 - ============== Evaluate epoch 13 on Test Set ==============
+INFO - 04/09/24 17:35:28 - 0:05:21 - Evaluate on Test Set. F1: 65.2580.
+INFO - 04/09/24 17:35:28 - 0:05:21 - No better model found (2/8)
+INFO - 04/09/24 17:35:28 - 0:05:21 - ============== epoch 14 ==============
+INFO - 04/09/24 17:35:30 - 0:05:24 - Finish training epoch 14. loss: 0.0095
+INFO - 04/09/24 17:35:30 - 0:05:24 - ============== Evaluate epoch 14 on Train Set ==============
+INFO - 04/09/24 17:35:31 - 0:05:24 - Evaluate on Train Set. F1: 99.8605.
+INFO - 04/09/24 17:35:31 - 0:05:24 - ============== Evaluate epoch 14 on Dev Set ==============
+INFO - 04/09/24 17:35:32 - 0:05:26 - Evaluate on Dev Set. F1: 71.5493.
+INFO - 04/09/24 17:35:32 - 0:05:26 - ============== Evaluate epoch 14 on Test Set ==============
+INFO - 04/09/24 17:35:34 - 0:05:28 - Evaluate on Test Set. F1: 65.4394.
+INFO - 04/09/24 17:35:34 - 0:05:28 - Found better model!!
+INFO - 04/09/24 17:35:34 - 0:05:28 - ============== epoch 15 ==============
+INFO - 04/09/24 17:35:37 - 0:05:30 - Finish training epoch 15. loss: 0.0099
+INFO - 04/09/24 17:35:37 - 0:05:30 - ============== Evaluate epoch 15 on Train Set ==============
+INFO - 04/09/24 17:35:38 - 0:05:31 - Evaluate on Train Set. F1: 99.5820.
+INFO - 04/09/24 17:35:38 - 0:05:31 - ============== Evaluate epoch 15 on Dev Set ==============
+INFO - 04/09/24 17:35:39 - 0:05:33 - Evaluate on Dev Set. F1: 71.8238.
+INFO - 04/09/24 17:35:39 - 0:05:33 - ============== Evaluate epoch 15 on Test Set ==============
+INFO - 04/09/24 17:35:41 - 0:05:35 - Evaluate on Test Set. F1: 64.9367.
+INFO - 04/09/24 17:35:41 - 0:05:35 - Found better model!!
+INFO - 04/09/24 17:35:41 - 0:05:35 - ============== epoch 16 ==============
+INFO - 04/09/24 17:35:44 - 0:05:37 - Finish training epoch 16. loss: 0.0143
+INFO - 04/09/24 17:35:44 - 0:05:37 - ============== Evaluate epoch 16 on Train Set ==============
+INFO - 04/09/24 17:35:44 - 0:05:38 - Evaluate on Train Set. F1: 98.7049.
+INFO - 04/09/24 17:35:44 - 0:05:38 - ============== Evaluate epoch 16 on Dev Set ==============
+INFO - 04/09/24 17:35:46 - 0:05:40 - Evaluate on Dev Set. F1: 69.2106.
+INFO - 04/09/24 17:35:46 - 0:05:40 - ============== Evaluate epoch 16 on Test Set ==============
+INFO - 04/09/24 17:35:48 - 0:05:42 - Evaluate on Test Set. F1: 64.5181.
+INFO - 04/09/24 17:35:48 - 0:05:42 - No better model found (1/8)
+INFO - 04/09/24 17:35:48 - 0:05:42 - ============== epoch 17 ==============
+INFO - 04/09/24 17:35:51 - 0:05:44 - Finish training epoch 17. loss: 0.0227
+INFO - 04/09/24 17:35:51 - 0:05:44 - ============== Evaluate epoch 17 on Train Set ==============
+INFO - 04/09/24 17:35:51 - 0:05:45 - Evaluate on Train Set. F1: 99.1191.
+INFO - 04/09/24 17:35:51 - 0:05:45 - ============== Evaluate epoch 17 on Dev Set ==============
+INFO - 04/09/24 17:35:53 - 0:05:47 - Evaluate on Dev Set. F1: 68.4952.
+INFO - 04/09/24 17:35:53 - 0:05:47 - ============== Evaluate epoch 17 on Test Set ==============
+INFO - 04/09/24 17:35:55 - 0:05:49 - Evaluate on Test Set. F1: 64.1463.
+INFO - 04/09/24 17:35:55 - 0:05:49 - No better model found (2/8)
+INFO - 04/09/24 17:35:55 - 0:05:49 - ============== epoch 18 ==============
+INFO - 04/09/24 17:35:58 - 0:05:51 - Finish training epoch 18. loss: 0.0126
+INFO - 04/09/24 17:35:58 - 0:05:51 - ============== Evaluate epoch 18 on Train Set ==============
+INFO - 04/09/24 17:35:58 - 0:05:52 - Evaluate on Train Set. F1: 99.2586.
+INFO - 04/09/24 17:35:58 - 0:05:52 - ============== Evaluate epoch 18 on Dev Set ==============
+INFO - 04/09/24 17:36:00 - 0:05:54 - Evaluate on Dev Set. F1: 68.9912.
+INFO - 04/09/24 17:36:00 - 0:05:54 - ============== Evaluate epoch 18 on Test Set ==============
+INFO - 04/09/24 17:36:02 - 0:05:56 - Evaluate on Test Set. F1: 63.7450.
+INFO - 04/09/24 17:36:02 - 0:05:56 - No better model found (3/8)
+INFO - 04/09/24 17:36:02 - 0:05:56 - ============== epoch 19 ==============
+INFO - 04/09/24 17:36:05 - 0:05:58 - Finish training epoch 19. loss: 0.0083
+INFO - 04/09/24 17:36:05 - 0:05:58 - ============== Evaluate epoch 19 on Train Set ==============
+INFO - 04/09/24 17:36:05 - 0:05:59 - Evaluate on Train Set. F1: 100.0000.
+INFO - 04/09/24 17:36:05 - 0:05:59 - ============== Evaluate epoch 19 on Dev Set ==============
+INFO - 04/09/24 17:36:07 - 0:06:01 - Evaluate on Dev Set. F1: 70.6605.
+INFO - 04/09/24 17:36:07 - 0:06:01 - ============== Evaluate epoch 19 on Test Set ==============
+INFO - 04/09/24 17:36:09 - 0:06:03 - Evaluate on Test Set. F1: 65.3870.
+INFO - 04/09/24 17:36:09 - 0:06:03 - No better model found (4/8)
+INFO - 04/09/24 17:36:09 - 0:06:03 - ============== epoch 20 ==============
+INFO - 04/09/24 17:36:12 - 0:06:05 - Finish training epoch 20. loss: 0.0048
+INFO - 04/09/24 17:36:12 - 0:06:05 - ============== Evaluate epoch 20 on Train Set ==============
+INFO - 04/09/24 17:36:12 - 0:06:06 - Evaluate on Train Set. F1: 100.0000.
+INFO - 04/09/24 17:36:12 - 0:06:06 - ============== Evaluate epoch 20 on Dev Set ==============
+INFO - 04/09/24 17:36:14 - 0:06:08 - Evaluate on Dev Set. F1: 71.4098.
+INFO - 04/09/24 17:36:14 - 0:06:08 - ============== Evaluate epoch 20 on Test Set ==============
+INFO - 04/09/24 17:36:16 - 0:06:10 - Evaluate on Test Set. F1: 65.9728.
+INFO - 04/09/24 17:36:16 - 0:06:10 - No better model found (5/8)
+INFO - 04/09/24 17:36:16 - 0:06:10 - ============== epoch 21 ==============
+INFO - 04/09/24 17:36:19 - 0:06:12 - Finish training epoch 21. loss: 0.0031
+INFO - 04/09/24 17:36:19 - 0:06:12 - ============== Evaluate epoch 21 on Train Set ==============
+INFO - 04/09/24 17:36:19 - 0:06:13 - Evaluate on Train Set. F1: 100.0000.
+INFO - 04/09/24 17:36:19 - 0:06:13 - ============== Evaluate epoch 21 on Dev Set ==============
+INFO - 04/09/24 17:36:21 - 0:06:15 - Evaluate on Dev Set. F1: 71.1890.
+INFO - 04/09/24 17:36:21 - 0:06:15 - ============== Evaluate epoch 21 on Test Set ==============
+INFO - 04/09/24 17:36:23 - 0:06:17 - Evaluate on Test Set. F1: 65.9249.
+INFO - 04/09/24 17:36:23 - 0:06:17 - No better model found (6/8)
+INFO - 04/09/24 17:36:23 - 0:06:17 - ============== epoch 22 ==============
+INFO - 04/09/24 17:36:26 - 0:06:19 - Finish training epoch 22. loss: 0.0032
+INFO - 04/09/24 17:36:26 - 0:06:19 - ============== Evaluate epoch 22 on Train Set ==============
+INFO - 04/09/24 17:36:26 - 0:06:20 - Evaluate on Train Set. F1: 99.8604.
+INFO - 04/09/24 17:36:26 - 0:06:20 - ============== Evaluate epoch 22 on Dev Set ==============
+INFO - 04/09/24 17:36:28 - 0:06:22 - Evaluate on Dev Set. F1: 71.3800.
+INFO - 04/09/24 17:36:28 - 0:06:22 - ============== Evaluate epoch 22 on Test Set ==============
+INFO - 04/09/24 17:36:30 - 0:06:24 - Evaluate on Test Set. F1: 66.2935.
+INFO - 04/09/24 17:36:30 - 0:06:24 - No better model found (7/8)
+INFO - 04/09/24 17:36:30 - 0:06:24 - ============== epoch 23 ==============
+INFO - 04/09/24 17:36:33 - 0:06:27 - Finish training epoch 23. loss: 0.0044
+INFO - 04/09/24 17:36:33 - 0:06:27 - ============== Evaluate epoch 23 on Train Set ==============
+INFO - 04/09/24 17:36:34 - 0:06:28 - Evaluate on Train Set. F1: 99.8604.
+INFO - 04/09/24 17:36:34 - 0:06:28 - ============== Evaluate epoch 23 on Dev Set ==============
+INFO - 04/09/24 17:36:35 - 0:06:29 - Evaluate on Dev Set. F1: 71.1161.
+INFO - 04/09/24 17:36:35 - 0:06:29 - ============== Evaluate epoch 23 on Test Set ==============
+INFO - 04/09/24 17:36:37 - 0:06:31 - Evaluate on Test Set. F1: 66.4384.
+INFO - 04/09/24 17:36:37 - 0:06:31 - No better model found (8/8)

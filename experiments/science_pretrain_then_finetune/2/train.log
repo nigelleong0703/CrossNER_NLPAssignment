@@ -1,0 +1,360 @@
+INFO - 04/09/24 18:25:35 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/09/24 18:25:35 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\science_pretrain_then_finetune\2
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 2
+                                     exp_name: science_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: science
+                                     usechar: False
+INFO - 04/09/24 18:25:35 - 0:00:00 - The experiment will be stored in experiments\science_pretrain_then_finetune\2
+                                     
+INFO - 04/09/24 18:25:35 - 0:00:00 - Load training set data
+INFO - 04/09/24 18:25:36 - 0:00:00 - Load development set data
+INFO - 04/09/24 18:25:36 - 0:00:00 - Load test set data
+INFO - 04/09/24 18:25:36 - 0:00:01 - label distribution for training set
+INFO - 04/09/24 18:25:36 - 0:00:01 - {'chemicalcompound': 0.06697674418604652, 'scientist': 0.11813953488372093, 'location': 0.06046511627906977, 'astronomicalobject': 0.11255813953488372, 'misc': 0.1572093023255814, 'protein': 0.0641860465116279, 'person': 0.09023255813953489, 'university': 0.052093023255813956, 'theory': 0.0074418604651162795, 'enzyme': 0.020465116279069766, 'organisation': 0.10976744186046512, 'award': 0.052093023255813956, 'country': 0.008372093023255815, 'event': 0.018604651162790697, 'discipline': 0.020465116279069766, 'chemicalelement': 0.014883720930232559, 'academicjournal': 0.026046511627906978}
+INFO - 04/09/24 18:25:36 - 0:00:01 - label distribution for dev set
+INFO - 04/09/24 18:25:36 - 0:00:01 - {'organisation': 0.1095350669818755, 'academicjournal': 0.058707643814026794, 'scientist': 0.12923561859732072, 'chemicalcompound': 0.0760441292356186, 'misc': 0.14184397163120568, 'university': 0.054373522458628844, 'discipline': 0.01615445232466509, 'location': 0.05594956658786446, 'protein': 0.03979511426319937, 'astronomicalobject': 0.14696611505122142, 'chemicalelement': 0.009062253743104806, 'event': 0.014184397163120567, 'person': 0.06028368794326241, 'award': 0.055161544523246654, 'enzyme': 0.018912529550827423, 'country': 0.01103230890464933, 'theory': 0.0027580772261623326}
+INFO - 04/09/24 18:25:36 - 0:00:01 - label distribution for test set
+INFO - 04/09/24 18:25:36 - 0:00:01 - {'organisation': 0.08837811589511169, 'astronomicalobject': 0.10909679507931369, 'misc': 0.16833926837164132, 'chemicalcompound': 0.05179669796050502, 'protein': 0.05050178051149239, 'person': 0.07445775331822596, 'university': 0.04208481709291033, 'scientist': 0.15247652962123664, 'enzyme': 0.02589834898025251, 'award': 0.04726448688896083, 'event': 0.010035610229847848, 'location': 0.05503399158303658, 'country': 0.008740692780835222, 'academicjournal': 0.058271285205568145, 'chemicalelement': 0.02751699579151829, 'discipline': 0.023632243444480415, 'theory': 0.006474587245063127}
+INFO - 04/09/24 18:25:36 - 0:00:01 - train size: 200; dev size 450; test size: 543;
+DEBUG - 04/09/24 18:25:36 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/09/24 18:25:37 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/09/24 18:25:45 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/09/24 18:25:45 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/09/24 18:25:45 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/09/24 18:26:34 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/09/24 18:26:34 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\science_pretrain_then_finetune\2
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 2
+                                     exp_name: science_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: science
+                                     usechar: False
+INFO - 04/09/24 18:26:34 - 0:00:00 - The experiment will be stored in experiments\science_pretrain_then_finetune\2
+                                     
+INFO - 04/09/24 18:26:34 - 0:00:00 - Load training set data
+INFO - 04/09/24 18:26:34 - 0:00:00 - Load development set data
+INFO - 04/09/24 18:26:34 - 0:00:01 - Load test set data
+INFO - 04/09/24 18:26:35 - 0:00:01 - label distribution for training set
+INFO - 04/09/24 18:26:35 - 0:00:01 - {'chemicalcompound': 0.06697674418604652, 'scientist': 0.11813953488372093, 'location': 0.06046511627906977, 'astronomicalobject': 0.11255813953488372, 'misc': 0.1572093023255814, 'protein': 0.0641860465116279, 'person': 0.09023255813953489, 'university': 0.052093023255813956, 'theory': 0.0074418604651162795, 'enzyme': 0.020465116279069766, 'organisation': 0.10976744186046512, 'award': 0.052093023255813956, 'country': 0.008372093023255815, 'event': 0.018604651162790697, 'discipline': 0.020465116279069766, 'chemicalelement': 0.014883720930232559, 'academicjournal': 0.026046511627906978}
+INFO - 04/09/24 18:26:35 - 0:00:01 - label distribution for dev set
+INFO - 04/09/24 18:26:35 - 0:00:01 - {'organisation': 0.1095350669818755, 'academicjournal': 0.058707643814026794, 'scientist': 0.12923561859732072, 'chemicalcompound': 0.0760441292356186, 'misc': 0.14184397163120568, 'university': 0.054373522458628844, 'discipline': 0.01615445232466509, 'location': 0.05594956658786446, 'protein': 0.03979511426319937, 'astronomicalobject': 0.14696611505122142, 'chemicalelement': 0.009062253743104806, 'event': 0.014184397163120567, 'person': 0.06028368794326241, 'award': 0.055161544523246654, 'enzyme': 0.018912529550827423, 'country': 0.01103230890464933, 'theory': 0.0027580772261623326}
+INFO - 04/09/24 18:26:35 - 0:00:01 - label distribution for test set
+INFO - 04/09/24 18:26:35 - 0:00:01 - {'organisation': 0.08837811589511169, 'astronomicalobject': 0.10909679507931369, 'misc': 0.16833926837164132, 'chemicalcompound': 0.05179669796050502, 'protein': 0.05050178051149239, 'person': 0.07445775331822596, 'university': 0.04208481709291033, 'scientist': 0.15247652962123664, 'enzyme': 0.02589834898025251, 'award': 0.04726448688896083, 'event': 0.010035610229847848, 'location': 0.05503399158303658, 'country': 0.008740692780835222, 'academicjournal': 0.058271285205568145, 'chemicalelement': 0.02751699579151829, 'discipline': 0.023632243444480415, 'theory': 0.006474587245063127}
+INFO - 04/09/24 18:26:35 - 0:00:01 - train size: 200; dev size 450; test size: 543;
+DEBUG - 04/09/24 18:26:35 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/09/24 18:26:36 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/09/24 18:26:43 - 0:00:09 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/09/24 18:26:43 - 0:00:09 - Pretraining on conll2003 NER dataset ...
+INFO - 04/09/24 18:26:43 - 0:00:09 - ============== epoch 0 ==============
+INFO - 04/09/24 18:32:27 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/09/24 18:32:27 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\science_pretrain_then_finetune\2
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 2
+                                     exp_name: science_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: science
+                                     usechar: False
+INFO - 04/09/24 18:32:27 - 0:00:00 - The experiment will be stored in experiments\science_pretrain_then_finetune\2
+                                     
+INFO - 04/09/24 18:32:27 - 0:00:00 - Load training set data
+INFO - 04/09/24 18:32:28 - 0:00:00 - Load development set data
+INFO - 04/09/24 18:32:28 - 0:00:01 - Load test set data
+INFO - 04/09/24 18:32:28 - 0:00:01 - label distribution for training set
+INFO - 04/09/24 18:32:28 - 0:00:01 - {'chemicalcompound': 0.06697674418604652, 'scientist': 0.11813953488372093, 'location': 0.06046511627906977, 'astronomicalobject': 0.11255813953488372, 'misc': 0.1572093023255814, 'protein': 0.0641860465116279, 'person': 0.09023255813953489, 'university': 0.052093023255813956, 'theory': 0.0074418604651162795, 'enzyme': 0.020465116279069766, 'organisation': 0.10976744186046512, 'award': 0.052093023255813956, 'country': 0.008372093023255815, 'event': 0.018604651162790697, 'discipline': 0.020465116279069766, 'chemicalelement': 0.014883720930232559, 'academicjournal': 0.026046511627906978}
+INFO - 04/09/24 18:32:28 - 0:00:01 - label distribution for dev set
+INFO - 04/09/24 18:32:28 - 0:00:01 - {'organisation': 0.1095350669818755, 'academicjournal': 0.058707643814026794, 'scientist': 0.12923561859732072, 'chemicalcompound': 0.0760441292356186, 'misc': 0.14184397163120568, 'university': 0.054373522458628844, 'discipline': 0.01615445232466509, 'location': 0.05594956658786446, 'protein': 0.03979511426319937, 'astronomicalobject': 0.14696611505122142, 'chemicalelement': 0.009062253743104806, 'event': 0.014184397163120567, 'person': 0.06028368794326241, 'award': 0.055161544523246654, 'enzyme': 0.018912529550827423, 'country': 0.01103230890464933, 'theory': 0.0027580772261623326}
+INFO - 04/09/24 18:32:28 - 0:00:01 - label distribution for test set
+INFO - 04/09/24 18:32:28 - 0:00:01 - {'organisation': 0.08837811589511169, 'astronomicalobject': 0.10909679507931369, 'misc': 0.16833926837164132, 'chemicalcompound': 0.05179669796050502, 'protein': 0.05050178051149239, 'person': 0.07445775331822596, 'university': 0.04208481709291033, 'scientist': 0.15247652962123664, 'enzyme': 0.02589834898025251, 'award': 0.04726448688896083, 'event': 0.010035610229847848, 'location': 0.05503399158303658, 'country': 0.008740692780835222, 'academicjournal': 0.058271285205568145, 'chemicalelement': 0.02751699579151829, 'discipline': 0.023632243444480415, 'theory': 0.006474587245063127}
+INFO - 04/09/24 18:32:28 - 0:00:01 - train size: 200; dev size 450; test size: 543;
+DEBUG - 04/09/24 18:32:29 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/09/24 18:32:29 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/09/24 18:32:36 - 0:00:09 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/09/24 18:32:36 - 0:00:09 - Pretraining on conll2003 NER dataset ...
+INFO - 04/09/24 18:32:36 - 0:00:09 - ============== epoch 0 ==============
+INFO - 04/09/24 18:32:58 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/09/24 18:32:58 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\science_pretrain_then_finetune\2
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 2
+                                     exp_name: science_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: science
+                                     usechar: False
+INFO - 04/09/24 18:32:58 - 0:00:00 - The experiment will be stored in experiments\science_pretrain_then_finetune\2
+                                     
+INFO - 04/09/24 18:32:58 - 0:00:00 - Load training set data
+INFO - 04/09/24 18:32:58 - 0:00:00 - Load development set data
+INFO - 04/09/24 18:32:59 - 0:00:01 - Load test set data
+INFO - 04/09/24 18:32:59 - 0:00:01 - label distribution for training set
+INFO - 04/09/24 18:32:59 - 0:00:01 - {'chemicalcompound': 0.06697674418604652, 'scientist': 0.11813953488372093, 'location': 0.06046511627906977, 'astronomicalobject': 0.11255813953488372, 'misc': 0.1572093023255814, 'protein': 0.0641860465116279, 'person': 0.09023255813953489, 'university': 0.052093023255813956, 'theory': 0.0074418604651162795, 'enzyme': 0.020465116279069766, 'organisation': 0.10976744186046512, 'award': 0.052093023255813956, 'country': 0.008372093023255815, 'event': 0.018604651162790697, 'discipline': 0.020465116279069766, 'chemicalelement': 0.014883720930232559, 'academicjournal': 0.026046511627906978}
+INFO - 04/09/24 18:32:59 - 0:00:01 - label distribution for dev set
+INFO - 04/09/24 18:32:59 - 0:00:01 - {'organisation': 0.1095350669818755, 'academicjournal': 0.058707643814026794, 'scientist': 0.12923561859732072, 'chemicalcompound': 0.0760441292356186, 'misc': 0.14184397163120568, 'university': 0.054373522458628844, 'discipline': 0.01615445232466509, 'location': 0.05594956658786446, 'protein': 0.03979511426319937, 'astronomicalobject': 0.14696611505122142, 'chemicalelement': 0.009062253743104806, 'event': 0.014184397163120567, 'person': 0.06028368794326241, 'award': 0.055161544523246654, 'enzyme': 0.018912529550827423, 'country': 0.01103230890464933, 'theory': 0.0027580772261623326}
+INFO - 04/09/24 18:32:59 - 0:00:01 - label distribution for test set
+INFO - 04/09/24 18:32:59 - 0:00:01 - {'organisation': 0.08837811589511169, 'astronomicalobject': 0.10909679507931369, 'misc': 0.16833926837164132, 'chemicalcompound': 0.05179669796050502, 'protein': 0.05050178051149239, 'person': 0.07445775331822596, 'university': 0.04208481709291033, 'scientist': 0.15247652962123664, 'enzyme': 0.02589834898025251, 'award': 0.04726448688896083, 'event': 0.010035610229847848, 'location': 0.05503399158303658, 'country': 0.008740692780835222, 'academicjournal': 0.058271285205568145, 'chemicalelement': 0.02751699579151829, 'discipline': 0.023632243444480415, 'theory': 0.006474587245063127}
+INFO - 04/09/24 18:32:59 - 0:00:01 - train size: 200; dev size 450; test size: 543;
+DEBUG - 04/09/24 18:33:00 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/09/24 18:33:00 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/09/24 18:33:08 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/09/24 18:33:08 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/09/24 18:33:08 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/09/24 18:33:31 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/09/24 18:33:31 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\science_pretrain_then_finetune\2
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 2
+                                     exp_name: science_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: science
+                                     usechar: False
+INFO - 04/09/24 18:33:31 - 0:00:00 - The experiment will be stored in experiments\science_pretrain_then_finetune\2
+                                     
+INFO - 04/09/24 18:33:31 - 0:00:00 - Load training set data
+INFO - 04/09/24 18:33:31 - 0:00:00 - Load development set data
+INFO - 04/09/24 18:33:31 - 0:00:01 - Load test set data
+INFO - 04/09/24 18:33:32 - 0:00:01 - label distribution for training set
+INFO - 04/09/24 18:33:32 - 0:00:01 - {'chemicalcompound': 0.06697674418604652, 'scientist': 0.11813953488372093, 'location': 0.06046511627906977, 'astronomicalobject': 0.11255813953488372, 'misc': 0.1572093023255814, 'protein': 0.0641860465116279, 'person': 0.09023255813953489, 'university': 0.052093023255813956, 'theory': 0.0074418604651162795, 'enzyme': 0.020465116279069766, 'organisation': 0.10976744186046512, 'award': 0.052093023255813956, 'country': 0.008372093023255815, 'event': 0.018604651162790697, 'discipline': 0.020465116279069766, 'chemicalelement': 0.014883720930232559, 'academicjournal': 0.026046511627906978}
+INFO - 04/09/24 18:33:32 - 0:00:01 - label distribution for dev set
+INFO - 04/09/24 18:33:32 - 0:00:01 - {'organisation': 0.1095350669818755, 'academicjournal': 0.058707643814026794, 'scientist': 0.12923561859732072, 'chemicalcompound': 0.0760441292356186, 'misc': 0.14184397163120568, 'university': 0.054373522458628844, 'discipline': 0.01615445232466509, 'location': 0.05594956658786446, 'protein': 0.03979511426319937, 'astronomicalobject': 0.14696611505122142, 'chemicalelement': 0.009062253743104806, 'event': 0.014184397163120567, 'person': 0.06028368794326241, 'award': 0.055161544523246654, 'enzyme': 0.018912529550827423, 'country': 0.01103230890464933, 'theory': 0.0027580772261623326}
+INFO - 04/09/24 18:33:32 - 0:00:01 - label distribution for test set
+INFO - 04/09/24 18:33:32 - 0:00:01 - {'organisation': 0.08837811589511169, 'astronomicalobject': 0.10909679507931369, 'misc': 0.16833926837164132, 'chemicalcompound': 0.05179669796050502, 'protein': 0.05050178051149239, 'person': 0.07445775331822596, 'university': 0.04208481709291033, 'scientist': 0.15247652962123664, 'enzyme': 0.02589834898025251, 'award': 0.04726448688896083, 'event': 0.010035610229847848, 'location': 0.05503399158303658, 'country': 0.008740692780835222, 'academicjournal': 0.058271285205568145, 'chemicalelement': 0.02751699579151829, 'discipline': 0.023632243444480415, 'theory': 0.006474587245063127}
+INFO - 04/09/24 18:33:32 - 0:00:01 - train size: 200; dev size 450; test size: 543;
+DEBUG - 04/09/24 18:33:32 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/09/24 18:33:33 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/09/24 18:33:40 - 0:00:09 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/09/24 18:33:40 - 0:00:09 - Pretraining on conll2003 NER dataset ...
+INFO - 04/09/24 18:33:40 - 0:00:09 - ============== epoch 0 ==============
+INFO - 04/09/24 18:35:02 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/09/24 18:35:02 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\science_pretrain_then_finetune\2
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 2
+                                     exp_name: science_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: science
+                                     usechar: False
+INFO - 04/09/24 18:35:02 - 0:00:00 - The experiment will be stored in experiments\science_pretrain_then_finetune\2
+                                     
+INFO - 04/09/24 18:35:02 - 0:00:00 - Load training set data
+INFO - 04/09/24 18:35:03 - 0:00:00 - Load development set data
+INFO - 04/09/24 18:35:03 - 0:00:01 - Load test set data
+INFO - 04/09/24 18:35:03 - 0:00:01 - label distribution for training set
+INFO - 04/09/24 18:35:03 - 0:00:01 - {'chemicalcompound': 0.06697674418604652, 'scientist': 0.11813953488372093, 'location': 0.06046511627906977, 'astronomicalobject': 0.11255813953488372, 'misc': 0.1572093023255814, 'protein': 0.0641860465116279, 'person': 0.09023255813953489, 'university': 0.052093023255813956, 'theory': 0.0074418604651162795, 'enzyme': 0.020465116279069766, 'organisation': 0.10976744186046512, 'award': 0.052093023255813956, 'country': 0.008372093023255815, 'event': 0.018604651162790697, 'discipline': 0.020465116279069766, 'chemicalelement': 0.014883720930232559, 'academicjournal': 0.026046511627906978}
+INFO - 04/09/24 18:35:03 - 0:00:01 - label distribution for dev set
+INFO - 04/09/24 18:35:03 - 0:00:01 - {'organisation': 0.1095350669818755, 'academicjournal': 0.058707643814026794, 'scientist': 0.12923561859732072, 'chemicalcompound': 0.0760441292356186, 'misc': 0.14184397163120568, 'university': 0.054373522458628844, 'discipline': 0.01615445232466509, 'location': 0.05594956658786446, 'protein': 0.03979511426319937, 'astronomicalobject': 0.14696611505122142, 'chemicalelement': 0.009062253743104806, 'event': 0.014184397163120567, 'person': 0.06028368794326241, 'award': 0.055161544523246654, 'enzyme': 0.018912529550827423, 'country': 0.01103230890464933, 'theory': 0.0027580772261623326}
+INFO - 04/09/24 18:35:03 - 0:00:01 - label distribution for test set
+INFO - 04/09/24 18:35:03 - 0:00:01 - {'organisation': 0.08837811589511169, 'astronomicalobject': 0.10909679507931369, 'misc': 0.16833926837164132, 'chemicalcompound': 0.05179669796050502, 'protein': 0.05050178051149239, 'person': 0.07445775331822596, 'university': 0.04208481709291033, 'scientist': 0.15247652962123664, 'enzyme': 0.02589834898025251, 'award': 0.04726448688896083, 'event': 0.010035610229847848, 'location': 0.05503399158303658, 'country': 0.008740692780835222, 'academicjournal': 0.058271285205568145, 'chemicalelement': 0.02751699579151829, 'discipline': 0.023632243444480415, 'theory': 0.006474587245063127}
+INFO - 04/09/24 18:35:03 - 0:00:01 - train size: 200; dev size 450; test size: 543;
+DEBUG - 04/09/24 18:35:04 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/09/24 18:35:05 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/09/24 18:35:12 - 0:00:09 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/09/24 18:35:12 - 0:00:09 - Pretraining on conll2003 NER dataset ...
+INFO - 04/09/24 18:35:12 - 0:00:09 - ============== epoch 0 ==============
+INFO - 04/09/24 18:36:14 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/09/24 18:36:14 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\science_pretrain_then_finetune\2
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 2
+                                     exp_name: science_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: science
+                                     usechar: False
+INFO - 04/09/24 18:36:14 - 0:00:00 - The experiment will be stored in experiments\science_pretrain_then_finetune\2
+                                     
+INFO - 04/09/24 18:36:14 - 0:00:00 - Load training set data
+INFO - 04/09/24 18:36:14 - 0:00:00 - Load development set data
+INFO - 04/09/24 18:36:14 - 0:00:01 - Load test set data
+INFO - 04/09/24 18:36:15 - 0:00:01 - label distribution for training set
+INFO - 04/09/24 18:36:15 - 0:00:01 - {'chemicalcompound': 0.06697674418604652, 'scientist': 0.11813953488372093, 'location': 0.06046511627906977, 'astronomicalobject': 0.11255813953488372, 'misc': 0.1572093023255814, 'protein': 0.0641860465116279, 'person': 0.09023255813953489, 'university': 0.052093023255813956, 'theory': 0.0074418604651162795, 'enzyme': 0.020465116279069766, 'organisation': 0.10976744186046512, 'award': 0.052093023255813956, 'country': 0.008372093023255815, 'event': 0.018604651162790697, 'discipline': 0.020465116279069766, 'chemicalelement': 0.014883720930232559, 'academicjournal': 0.026046511627906978}
+INFO - 04/09/24 18:36:15 - 0:00:01 - label distribution for dev set
+INFO - 04/09/24 18:36:15 - 0:00:01 - {'organisation': 0.1095350669818755, 'academicjournal': 0.058707643814026794, 'scientist': 0.12923561859732072, 'chemicalcompound': 0.0760441292356186, 'misc': 0.14184397163120568, 'university': 0.054373522458628844, 'discipline': 0.01615445232466509, 'location': 0.05594956658786446, 'protein': 0.03979511426319937, 'astronomicalobject': 0.14696611505122142, 'chemicalelement': 0.009062253743104806, 'event': 0.014184397163120567, 'person': 0.06028368794326241, 'award': 0.055161544523246654, 'enzyme': 0.018912529550827423, 'country': 0.01103230890464933, 'theory': 0.0027580772261623326}
+INFO - 04/09/24 18:36:15 - 0:00:01 - label distribution for test set
+INFO - 04/09/24 18:36:15 - 0:00:01 - {'organisation': 0.08837811589511169, 'astronomicalobject': 0.10909679507931369, 'misc': 0.16833926837164132, 'chemicalcompound': 0.05179669796050502, 'protein': 0.05050178051149239, 'person': 0.07445775331822596, 'university': 0.04208481709291033, 'scientist': 0.15247652962123664, 'enzyme': 0.02589834898025251, 'award': 0.04726448688896083, 'event': 0.010035610229847848, 'location': 0.05503399158303658, 'country': 0.008740692780835222, 'academicjournal': 0.058271285205568145, 'chemicalelement': 0.02751699579151829, 'discipline': 0.023632243444480415, 'theory': 0.006474587245063127}
+INFO - 04/09/24 18:36:15 - 0:00:01 - train size: 200; dev size 450; test size: 543;
+DEBUG - 04/09/24 18:36:15 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/09/24 18:36:16 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/09/24 18:36:23 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/09/24 18:36:23 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/09/24 18:36:23 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/09/24 19:36:01 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/09/24 19:36:01 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\science_pretrain_then_finetune\2
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 2
+                                     exp_name: science_pretrain_then_finetune
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: science
+                                     usechar: False
+INFO - 04/09/24 19:36:01 - 0:00:00 - The experiment will be stored in experiments\science_pretrain_then_finetune\2
+                                     
+INFO - 04/09/24 19:36:01 - 0:00:00 - Load training set data
+INFO - 04/09/24 19:36:01 - 0:00:00 - Load development set data
+INFO - 04/09/24 19:36:01 - 0:00:00 - Load test set data
+INFO - 04/09/24 19:36:02 - 0:00:01 - label distribution for training set
+INFO - 04/09/24 19:36:02 - 0:00:01 - {'chemicalcompound': 0.06697674418604652, 'scientist': 0.11813953488372093, 'location': 0.06046511627906977, 'astronomicalobject': 0.11255813953488372, 'misc': 0.1572093023255814, 'protein': 0.0641860465116279, 'person': 0.09023255813953489, 'university': 0.052093023255813956, 'theory': 0.0074418604651162795, 'enzyme': 0.020465116279069766, 'organisation': 0.10976744186046512, 'award': 0.052093023255813956, 'country': 0.008372093023255815, 'event': 0.018604651162790697, 'discipline': 0.020465116279069766, 'chemicalelement': 0.014883720930232559, 'academicjournal': 0.026046511627906978}
+INFO - 04/09/24 19:36:02 - 0:00:01 - label distribution for dev set
+INFO - 04/09/24 19:36:02 - 0:00:01 - {'organisation': 0.1095350669818755, 'academicjournal': 0.058707643814026794, 'scientist': 0.12923561859732072, 'chemicalcompound': 0.0760441292356186, 'misc': 0.14184397163120568, 'university': 0.054373522458628844, 'discipline': 0.01615445232466509, 'location': 0.05594956658786446, 'protein': 0.03979511426319937, 'astronomicalobject': 0.14696611505122142, 'chemicalelement': 0.009062253743104806, 'event': 0.014184397163120567, 'person': 0.06028368794326241, 'award': 0.055161544523246654, 'enzyme': 0.018912529550827423, 'country': 0.01103230890464933, 'theory': 0.0027580772261623326}
+INFO - 04/09/24 19:36:02 - 0:00:01 - label distribution for test set
+INFO - 04/09/24 19:36:02 - 0:00:01 - {'organisation': 0.08837811589511169, 'astronomicalobject': 0.10909679507931369, 'misc': 0.16833926837164132, 'chemicalcompound': 0.05179669796050502, 'protein': 0.05050178051149239, 'person': 0.07445775331822596, 'university': 0.04208481709291033, 'scientist': 0.15247652962123664, 'enzyme': 0.02589834898025251, 'award': 0.04726448688896083, 'event': 0.010035610229847848, 'location': 0.05503399158303658, 'country': 0.008740692780835222, 'academicjournal': 0.058271285205568145, 'chemicalelement': 0.02751699579151829, 'discipline': 0.023632243444480415, 'theory': 0.006474587245063127}
+INFO - 04/09/24 19:36:02 - 0:00:01 - train size: 200; dev size 450; test size: 543;
+DEBUG - 04/09/24 19:36:02 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/09/24 19:36:03 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/09/24 19:36:11 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/09/24 19:36:11 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/09/24 19:36:11 - 0:00:10 - ============== epoch 0 ==============
