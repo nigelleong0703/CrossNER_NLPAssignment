@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CrossNER
 <img src="imgs/pytorch-logo-dark.png" width="10%"> [![](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -104,3 +105,6 @@ Jointly train Coach (word+Char level) on the source domain and target (politics)
 
 ## Bug Report
 - Feel free to create an issue or send an email to zihan.liu@connect.ust.hk.
+=======
+# CrossNER_NLPAssignment
+>>>>>>> 83e9470c301d279dc3408b1c64f57271e0b2a217
