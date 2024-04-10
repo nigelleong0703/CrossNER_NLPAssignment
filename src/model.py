@@ -10,6 +10,7 @@ from src.utils import load_embedding
 import logging
 
 logger = logging.getLogger()
+pad_token_label_id = nn.CrossEntropyLoss().ignore_index
 
 
 class BertTagger(nn.Module):
@@ -118,11 +119,15 @@ class BertSpan(nn.Module):
         # self.num_labels_tb = 2
         # self.classifier_tb = nn.Linear(config.hidden_size, self.num_labels_tb)
 
-        self.init_weights()
+        # self.init_weights()
 
     def forward(self, X, labels_bio=None):
         outputs = self.model(X)
+        # output[0]shape: batch_size, sequence_length, config.vocab_size
+        # output[1]shape: Tuple of torch.FloatTensor (one for the output of the embeddings, if the model has an embedding layer, + one for the output of each layer) of shape (batch_size, sequence_length, hidden_size).
+
         final_embedding = outputs[1][-1]
+        # print(final_embedding.shape)  # B, seq_len, hidden_dim
         sequence_output1 = self.dropout(final_embedding)
         logits_bio = self.classifier_bio(sequence_output1)
         outputs = (
@@ -130,18 +135,31 @@ class BertSpan(nn.Module):
             final_embedding,
         ) + outputs[2:]
 
-        if labels_bio is not None:
-            active_loss = True
-            active_logits = logits_bio.view(-1, self.span_num_labels)[active_loss]
-            loss_fct = nn.CrossEntropyLoss()
-            loss_bio = loss_fct(
-                logits_bio.view(-1, self.span_num_labels), labels_bio.view(-1)
-            )
-            outputs = (
-                loss_bio,
-                active_logits,
-            ) + outputs
+        # if labels_bio is not None:
+        #     active_loss = True
+        #     print(logits_bio)
+        #     active_logits = logits_bio.view(-1, self.span_num_labels)[active_loss]
+        #     print("This is active_logits")
+        #     print(active_logits)
+        #     loss_fct = nn.CrossEntropyLoss()
 
+        #     print(
+        #         logits_bio.view(-1, self.span_num_labels).shape,
+        #         labels_bio.view(-1).shape,
+        #     )
+        #     loss_bio = loss_fct(
+        #         logits_bio.view(-1, self.span_num_labels), labels_bio.view(-1)
+        #     )
+
+        #     print("This is loss_bio")
+        #     print(loss_bio)
+        #     print(loss_bio.item())
+        #     outputs = (
+        #         loss_bio,
+        #         active_logits,
+        #     ) + outputs
+
+        # print(outputs)
         return outputs
 
 
@@ -154,15 +172,31 @@ class BertType(nn.Module):
         self.model = AutoModelWithLMHead.from_pretrained(
             params.model_name, config=config
         )
-        self.dropout(0)
+        # self.dropout(0)
+        self.dropout = nn.Dropout(0)
         self.classifier = nn.Linear(config.hidden_size, self.num_tag)
-        self.init_weights()
+        # self.init_weights()
 
-    def forward(self, X, labels_type, logits_bio):
+    def forward(self, X, logits_bio=None, labels_type=None):
+
         outputs = self.model(X)
         final_embedding = outputs[1][-1]
+        # print(final_embedding.shape)
         sequence_output2 = self.dropout(final_embedding)
         type_num_labels = self.num_tag
+
+        if logits_bio is not None:
+            bio_predictions = torch.argmax(logits_bio, dim=-1)
+            # Create a mask for entity tokens (B and I)
+            # Assuming "B"=0 and "I"=1; adjust indices based on your encoding
+            entity_mask = (bio_predictions == 0) | (bio_predictions == 1)
+
+            # Expand mask to match embedding dimensionality
+            entity_mask = entity_mask.unsqueeze(-1).expand_as(sequence_output2)
+
+            # Apply mask: zero out vectors for non-entity tokens
+            sequence_output2 = sequence_output2 * entity_mask.float()
+
         logits_type = self.classifier(sequence_output2)
 
         outputs = (
@@ -170,23 +204,35 @@ class BertType(nn.Module):
             final_embedding,
         ) + outputs[2:]
 
-        if labels_type is not None:
-            active_loss = True
-
-            active_logits = logits_type.view(-1, type_num_labels)[active_loss]
-            loss_fct = nn.CrossEntropyLoss()
-            active_labels = labels_type.view(-1)[active_loss]
-            if len(active_labels) == 0:
-                loss_type = torch.tensor(0).float().to(self.device_)
-            else:
-                loss_type = loss_fct(active_logits, active_labels)
-
-            outputs = (
-                loss_type,
-                active_logits,
-            ) + outputs
-
         return outputs
+
+        # if labels_type is not None:
+        #     active_loss = True
+        #     print(logits_type)
+        #     active_logits = logits_type.view(-1, type_num_labels)[active_loss]
+        #     print("This is active_logits_labels")
+        #     print(active_logits)
+        #     loss_fct = nn.CrossEntropyLoss()
+        #     active_labels = labels_type.view(-1)[active_loss]
+        #     if len(active_labels) == 0:
+        #         loss_type = torch.tensor(0).float().to(self.device_)
+        #     else:
+        #         # print(active_logits.shape)
+        #         # print(active_labels.shape)
+        #         loss_type = loss_fct(active_logits, active_labels)
+
+        #     print("This is loss_type")
+        #     print(loss_type)
+        #     print(loss_type.item())
+        #     outputs = (
+        #         loss_type,
+        #         active_logits,
+        #     ) + outputs
+
+        # print(outputs)
+        return outputs
+
+    # def mix(self, logits_type, logits_bio):
 
 
 class BiLSTMTagger(nn.Module):

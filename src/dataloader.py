@@ -7,11 +7,19 @@ from tqdm import tqdm
 import random
 import logging
 
+import sys
+
+sys.path.append(
+    "C:/Users/nigelleong/OneDrive - Nanyang Technological University/NLP/last assign/CrossNER"
+)
+
 logger = logging.getLogger()
 
 # from transformers import BertTokenizer
 # bert_tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
 from src.config import get_params
+
+# from config import get_params
 
 params = get_params()
 from transformers import AutoTokenizer
@@ -21,6 +29,7 @@ pad_token_label_id = nn.CrossEntropyLoss().ignore_index
 
 span_labels = ["B", "I", "O"]
 politics_label_only = [
+    "O",
     "country",
     "politician",
     "election",
@@ -30,9 +39,9 @@ politics_label_only = [
     "misc",
     "politicalparty",
     "event",
-    "O",
 ]
 science_label_only = [
+    "O",
     "scientist",
     "person",
     "university",
@@ -50,9 +59,9 @@ science_label_only = [
     "theory",
     "award",
     "misc",
-    "O",
 ]
 music_label_only = [
+    "O",
     "musicgenre",
     "song",
     "band",
@@ -66,9 +75,9 @@ music_label_only = [
     "organisation",
     "person",
     "misc",
-    "O",
 ]
 literature_label_only = [
+    "O",
     "book",
     "writer",
     "award",
@@ -81,9 +90,9 @@ literature_label_only = [
     "location",
     "organisation",
     "misc",
-    "O",
 ]
 ai_label_only = [
+    "O",
     "field",
     "task",
     "product",
@@ -98,7 +107,6 @@ ai_label_only = [
     "organisation",
     "location",
     "misc",
-    "O",
 ]
 
 domain2labels_only = {
@@ -306,9 +314,11 @@ def read_ner(datapath, tgt_dm):
 
 
 def read_ner_spanlabelsplit(datapath, tgt_dm):
-    inputs, spans, labels = [], []
+    inputs, spans, labels = [], [], []
+    real_labels = []
     with open(datapath, "r") as fr:
         token_list, label_list, span_list = [], [], []
+        real_labels_list = []
         for i, line in enumerate(fr):
             line = line.strip()
             if line == "":
@@ -325,21 +335,25 @@ def read_ner_spanlabelsplit(datapath, tgt_dm):
                     spans.append(
                         [pad_token_label_id] + span_list + [pad_token_label_id]
                     )
+                    real_labels.append(
+                        [pad_token_label_id] + real_labels_list + [pad_token_label_id]
+                    )
 
                 token_list, label_list, span_list = [], [], []
+                real_labels_list = []
                 continue
 
             splits = line.split("\t")
             token = splits[0]
-            label = splits[1]
+            real_label = splits[1]
 
-            parts = label.split("-")
+            parts = real_label.split("-")
             if len(parts) > 1:
                 span = parts[0]
                 label = parts[1]
             else:
-                span = label
-                label = label
+                span = real_label
+                label = real_label
 
             subs_ = auto_tokenizer.tokenize(token)
             if len(subs_) > 0:
@@ -351,13 +365,17 @@ def read_ner_spanlabelsplit(datapath, tgt_dm):
                     [span_labels.index(span)] + [pad_token_label_id] * (len(subs_) - 1)
                 )
                 token_list.extend(auto_tokenizer.convert_tokens_to_ids(subs_))
+                real_labels_list.extend(
+                    [domain2labels[tgt_dm].index(real_label)]
+                    + [pad_token_label_id] * (len(subs_) - 1)
+                )
             else:
                 print(
                     "length of subwords for %s is zero; its label is %s, the span is %s"
                     % (token, label, span)
                 )
 
-    return inputs, spans, labels
+    return inputs, spans, labels, real_labels
 
 
 def read_ner_for_bilstm(datapath, tgt_dm, vocab):
@@ -398,13 +416,14 @@ class Dataset(data.Dataset):
 
 
 class DatasetSplit(data.Dataset):
-    def __init__(self, inputs, spans, labels):
+    def __init__(self, inputs, spans, labels, real_labels):
         self.X = inputs
         self.y = spans
         self.z = labels
+        self.real_labels = real_labels
 
     def __getitem__(self, index):
-        return self.X[index], self.y[index], self.z[index]
+        return self.X[index], self.y[index], self.z[index], self.real_labels[index]
 
     def __len__(self):
         return len(self.X)
@@ -450,6 +469,37 @@ def collate_fn(data):
         padded_y[i, :length] = torch.LongTensor(y_)
 
     return padded_seqs, padded_y
+
+
+def collate_fn_split(data):
+    # Unpack data into X, spans, and Y
+    X, spans, Y, real_Y = zip(*data)
+
+    # Calculate lengths (assuming X is a list of sequences)
+    lengths = [len(seq) for seq in X]
+    max_length = max(lengths)
+
+    # Initialize tensors for padded sequences and spans
+    padded_X = torch.LongTensor(len(X), max_length).fill_(
+        auto_tokenizer.pad_token_id
+    )  # Assuming pad token ID is 0
+    padded_spans = torch.LongTensor(len(X), max_length).fill_(
+        pad_token_label_id
+    )  # Initialize with -1
+    padded_Y = torch.LongTensor(len(X), max_length).fill_(
+        pad_token_label_id
+    )  # Initialize with -1
+    padded_real_Y = torch.LongTensor(len(X), max_length).fill_(pad_token_label_id)
+
+    # Fill in the tensors with actual data
+    for i, (seq, span, y, realy) in enumerate(zip(X, spans, Y, real_Y)):
+        length = lengths[i]
+        padded_X[i, :length] = torch.LongTensor(seq)
+        padded_spans[i, :length] = torch.LongTensor(span)
+        padded_Y[i, :length] = torch.LongTensor(y)
+        padded_real_Y[i, :length] = torch.LongTensor(realy)
+
+    return padded_X, padded_spans, padded_Y, padded_real_Y
 
 
 def collate_fn_for_bilstm(data):
@@ -653,7 +703,7 @@ def get_dataloader(params):
 
 def get_dataloader_split(params):
     logger.info("Load training set data")
-    inputs_train, spans_train, labels_train = read_ner_spanlabelsplit(
+    inputs_train, spans_train, labels_train, real_label_train = read_ner_spanlabelsplit(
         "ner_data/%s/train.txt" % params.tgt_dm, params.tgt_dm
     )
     if params.n_samples != -1:
@@ -661,76 +711,22 @@ def get_dataloader_split(params):
         inputs_train = inputs_train[: params.n_samples]
         labels_train = labels_train[: params.n_samples]
         spans_train = spans_train[: params.n_samples]
+        real_label_train = real_label_train[: params.n_samples]
     logger.info("Load development set data")
-    inputs_dev, spans_dev, labels_dev = read_ner_spanlabelsplit(
+    inputs_dev, spans_dev, labels_dev, real_label_dev = read_ner_spanlabelsplit(
         "ner_data/%s/dev.txt" % params.tgt_dm, params.tgt_dm
     )
     logger.info("Load test set data")
-    inputs_test, spans_test, labels_test = read_ner(
+    inputs_test, spans_test, labels_test, real_label_test = read_ner_spanlabelsplit(
         "ner_data/%s/test.txt" % params.tgt_dm, params.tgt_dm
     )
-
-    # logger.info("label distribution for training set")
-    # label_distri_train = {}
-    # count_tok_train = 0
-    # for label_seq in labels_train:
-    #     for label in label_seq:
-    #         if label != pad_token_label_id:
-    #             label_name = domain2labels[params.tgt_dm][label]
-    #             if "B" in label_name:
-    #                 count_tok_train += 1
-    #                 label_name = label_name.split("-")[1]
-    #                 if label_name not in label_distri_train:
-    #                     label_distri_train[label_name] = 1
-    #                 else:
-    #                     label_distri_train[label_name] += 1
-    # print(label_distri_train)
-    # for key in label_distri_train:
-    #     label_distri_train[key] /= count_tok_train
-    # logger.info(label_distri_train)
-
-    # logger.info("label distribution for dev set")
-    # label_distri_dev = {}
-    # count_tok_test = 0
-    # for label_seq in labels_dev:
-    #     for label in label_seq:
-    #         if label != pad_token_label_id:
-    #             label_name = domain2labels[params.tgt_dm][label]
-    #             if "B" in label_name:
-    #                 count_tok_test += 1
-    #                 label_name = label_name.split("-")[1]
-    #                 if label_name not in label_distri_dev:
-    #                     label_distri_dev[label_name] = 1
-    #                 else:
-    #                     label_distri_dev[label_name] += 1
-    # print(label_distri_dev)
-    # for key in label_distri_dev:
-    #     label_distri_dev[key] /= count_tok_test
-    # logger.info(label_distri_dev)
-
-    # logger.info("label distribution for test set")
-    # label_distri_test = {}
-    # count_tok_test = 0
-    # for label_seq in labels_test:
-    #     for label in label_seq:
-    #         if label != pad_token_label_id:
-    #             label_name = domain2labels[params.tgt_dm][label]
-    #             if "B" in label_name:
-    #                 count_tok_test += 1
-    #                 label_name = label_name.split("-")[1]
-    #                 if label_name not in label_distri_test:
-    #                     label_distri_test[label_name] = 1
-    #                 else:
-    #                     label_distri_test[label_name] += 1
-    # print(label_distri_test)
-    # for key in label_distri_test:
-    #     label_distri_test[key] /= count_tok_test
-    # logger.info(label_distri_test)
-
     if params.conll and params.joint:
-        conll_inputs_train, conll_spans_train, conll_labels_train = (
-            read_ner_spanlabelsplit("ner_data/conll2003/train.txt", params.tgt_dm)
-        )
+        (
+            conll_inputs_train,
+            conll_spans_train,
+            conll_labels_train,
+            conll_real_labels_train,
+        ) = read_ner_spanlabelsplit("ner_data/conll2003/train.txt", params.tgt_dm)
         inputs_train = (
             inputs_train * 50
         )  # augment the target domain data to balance the source and target domain data
@@ -739,33 +735,34 @@ def get_dataloader_split(params):
         inputs_train = inputs_train + conll_inputs_train
         labels_train = labels_train + conll_labels_train
         spans_train = spans_train + conll_spans_train
+        real_label_train = real_label_train + conll_real_labels_train
 
     logger.info(
         "train size: %d; dev size %d; test size: %d;"
         % (len(inputs_train), len(inputs_dev), len(inputs_test))
     )
 
-    dataset_train = DatasetSplit(inputs_train, spans_train, labels_train)
-    dataset_dev = DatasetSplit(inputs_dev, spans_dev, labels_dev)
-    dataset_test = DatasetSplit(inputs_test, spans_test, labels_test)
+    dataset_train = DatasetSplit(inputs_train, spans_train, labels_train, real_label_train)
+    dataset_dev = DatasetSplit(inputs_dev, spans_dev, labels_dev, real_label_dev)
+    dataset_test = DatasetSplit(inputs_test, spans_test, labels_test, real_label_test)
 
     dataloader_train = DataLoader(
         dataset=dataset_train,
         batch_size=params.batch_size,
         shuffle=True,
-        collate_fn=collate_fn,
+        collate_fn=collate_fn_split,
     )
     dataloader_dev = DataLoader(
         dataset=dataset_dev,
         batch_size=params.batch_size,
         shuffle=False,
-        collate_fn=collate_fn,
+        collate_fn=collate_fn_split,
     )
     dataloader_test = DataLoader(
         dataset=dataset_test,
         batch_size=params.batch_size,
         shuffle=False,
-        collate_fn=collate_fn,
+        collate_fn=collate_fn_split,
     )
 
     return dataloader_train, dataloader_dev, dataloader_test
@@ -804,5 +801,71 @@ def get_conll2003_dataloader(batch_size, tgt_dm):
     return dataloader_train, dataloader_dev, dataloader_test
 
 
+def get_conll2003_dataloader_split(batch_size, tgt_dm):
+    inputs_train, spans_train, labels_train, real_labels_train = (
+        read_ner_spanlabelsplit("ner_data/conll2003/train.txt", tgt_dm)
+    )
+    inputs_dev, spans_dev, labels_dev, real_labels_dev = read_ner_spanlabelsplit(
+        "ner_data/conll2003/dev.txt", tgt_dm
+    )
+    inputs_test, spans_test, labels_test, real_labels_test = read_ner_spanlabelsplit(
+        "ner_data/conll2003/test.txt", tgt_dm
+    )
+
+    logger.info(
+        "conll2003 dataset: train size: %d; dev size %d; test size: %d"
+        % (len(inputs_train), len(inputs_dev), len(inputs_test))
+    )
+
+    # dataset_train = Dataset(inputs_train, labels_train)
+    # dataset_dev = Dataset(inputs_dev, labels_dev)
+    # dataset_test = Dataset(inputs_test, labels_test)
+
+    dataset_train = DatasetSplit(
+        inputs_train, spans_train, labels_train, real_labels_train
+    )
+    dataset_dev = DatasetSplit(inputs_dev, spans_dev, labels_dev, real_labels_dev)
+    dataset_test = DatasetSplit(inputs_test, spans_test, labels_test, real_labels_test)
+
+    dataloader_train = DataLoader(
+        dataset=dataset_train,
+        batch_size=batch_size,
+        shuffle=True,
+        collate_fn=collate_fn_split,
+    )
+    dataloader_dev = DataLoader(
+        dataset=dataset_dev,
+        batch_size=batch_size,
+        shuffle=False,
+        collate_fn=collate_fn_split,
+    )
+    dataloader_test = DataLoader(
+        dataset=dataset_test,
+        batch_size=batch_size,
+        shuffle=False,
+        collate_fn=collate_fn_split,
+    )
+
+    return dataloader_train, dataloader_dev, dataloader_test
+
+
 if __name__ == "__main__":
-    read_ner("../ner_data/final_politics/politics.txt", "politics")
+    # read_ner("../ner_data/final_politics/politics.txt", "politics")
+    dataloader_train, dataloader_dev, dataloader_test = get_conll2003_dataloader(
+        16, "ai"
+    )
+    first_batch = next(iter(dataloader_dev))
+    print(len(first_batch))
+    print(first_batch[0].shape)
+    print(first_batch[0][0])
+    print(first_batch[1][0])
+
+    dataloader_train, dataloader_dev, dataloader_test = get_conll2003_dataloader_split(
+        16, "ai"
+    )
+    first_batch = next(iter(dataloader_dev))
+    print(len(first_batch))
+    print(first_batch[0].shape)
+    print(first_batch[0][0])
+    print(first_batch[1][0])
+    print(first_batch[2][0])

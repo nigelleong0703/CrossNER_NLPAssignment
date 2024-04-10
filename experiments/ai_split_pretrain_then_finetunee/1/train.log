@@ -1,0 +1,1756 @@
+INFO - 04/10/24 16:25:34 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 16:25:34 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 16:25:34 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 16:25:34 - 0:00:00 - Load training set data
+INFO - 04/10/24 16:25:57 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 16:25:57 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 16:25:57 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 16:25:57 - 0:00:00 - Load training set data
+INFO - 04/10/24 16:25:58 - 0:00:00 - Load development set data
+INFO - 04/10/24 16:25:58 - 0:00:00 - Load test set data
+INFO - 04/10/24 16:26:26 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 16:26:26 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 16:26:26 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 16:26:26 - 0:00:00 - Load training set data
+INFO - 04/10/24 16:26:26 - 0:00:00 - Load development set data
+INFO - 04/10/24 16:26:27 - 0:00:00 - Load test set data
+INFO - 04/10/24 16:26:27 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+INFO - 04/10/24 16:27:24 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 16:27:24 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 16:27:24 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 16:27:24 - 0:00:00 - Load training set data
+INFO - 04/10/24 16:27:24 - 0:00:00 - Load development set data
+INFO - 04/10/24 16:27:24 - 0:00:00 - Load test set data
+INFO - 04/10/24 16:27:25 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 16:27:25 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:27:26 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 16:27:50 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 16:27:50 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 16:27:50 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 16:27:50 - 0:00:00 - Load training set data
+INFO - 04/10/24 16:27:50 - 0:00:00 - Load development set data
+INFO - 04/10/24 16:27:50 - 0:00:00 - Load test set data
+INFO - 04/10/24 16:27:50 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 16:27:51 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:27:51 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 16:27:52 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:27:52 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 16:28:28 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 16:28:28 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 16:28:28 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 16:28:28 - 0:00:00 - Load training set data
+INFO - 04/10/24 16:28:28 - 0:00:00 - Load development set data
+INFO - 04/10/24 16:28:28 - 0:00:00 - Load test set data
+INFO - 04/10/24 16:28:29 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 16:28:29 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:28:30 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 16:28:30 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:28:31 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 16:33:27 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 16:33:27 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 16:33:27 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 16:33:27 - 0:00:00 - Load training set data
+INFO - 04/10/24 16:33:27 - 0:00:00 - Load development set data
+INFO - 04/10/24 16:33:28 - 0:00:00 - Load test set data
+INFO - 04/10/24 16:33:28 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 16:33:28 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:33:29 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 16:33:29 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:33:30 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 16:33:38 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 16:33:38 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 16:33:38 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 16:35:20 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 16:35:20 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 16:35:20 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 16:35:20 - 0:00:00 - Load training set data
+INFO - 04/10/24 16:35:20 - 0:00:00 - Load development set data
+INFO - 04/10/24 16:35:20 - 0:00:00 - Load test set data
+INFO - 04/10/24 16:35:20 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 16:35:21 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:35:21 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 16:35:22 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:35:22 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 16:35:30 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 16:35:30 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 16:35:30 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 16:36:34 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 16:36:34 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 16:36:34 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 16:36:34 - 0:00:00 - Load training set data
+INFO - 04/10/24 16:36:35 - 0:00:00 - Load development set data
+INFO - 04/10/24 16:36:35 - 0:00:00 - Load test set data
+INFO - 04/10/24 16:36:35 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 16:36:35 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:36:36 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 16:36:36 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 16:36:37 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 16:36:45 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 16:36:45 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:08:56 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:08:56 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:08:56 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:08:56 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:08:56 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:08:56 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:08:57 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:08:57 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:08:58 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:08:58 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:08:59 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:09:07 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:09:07 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:09:27 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:09:27 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:09:27 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:09:27 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:09:27 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:09:27 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:09:27 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:09:28 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:09:28 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:09:29 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:09:29 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:09:38 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:09:38 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:09:38 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 17:10:17 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:10:17 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:10:17 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:10:17 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:10:18 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:10:18 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:10:18 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:10:18 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:10:19 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:10:19 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:10:20 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:10:28 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:10:28 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:10:28 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 17:11:46 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:11:46 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:11:46 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:11:46 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:11:46 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:11:46 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:11:46 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:11:47 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:11:47 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:11:48 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:11:48 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:11:56 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:11:56 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:11:56 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 17:16:02 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:16:02 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:16:02 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:16:02 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:16:02 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:16:03 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:16:03 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:16:03 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:16:04 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:16:04 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:16:05 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:16:13 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:16:13 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:16:13 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 17:16:48 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:16:48 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:16:48 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:16:48 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:16:48 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:16:48 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:16:49 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:16:49 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:16:50 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:16:50 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:16:50 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:16:59 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:16:59 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:16:59 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 17:17:18 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:17:18 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:17:18 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:17:18 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:17:18 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:17:19 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:17:19 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:17:19 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:17:20 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:17:21 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:17:21 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:17:30 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:17:30 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:17:30 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 17:20:01 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:20:01 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:20:01 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:20:01 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:20:01 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:20:02 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:20:02 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:20:02 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:20:03 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:20:03 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:20:04 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:20:11 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:20:11 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:20:11 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 17:26:18 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:26:18 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:26:18 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:26:18 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:26:19 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:26:19 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:26:19 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:26:19 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:26:20 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:26:21 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:26:21 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:26:29 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:26:29 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:26:29 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 17:27:58 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:27:58 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:27:58 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:27:58 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:27:58 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:27:59 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:27:59 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:28:00 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:28:01 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:28:01 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:28:02 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:28:09 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:28:09 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:28:09 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 17:29:16 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:29:16 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:29:16 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:29:16 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:29:16 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:29:16 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:29:17 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:29:17 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:29:18 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:29:18 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:29:18 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:29:26 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:29:26 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:29:26 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 17:36:55 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:36:55 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:36:55 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:36:55 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:36:55 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:36:56 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:36:56 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:36:56 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:36:57 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:36:58 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:36:58 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:37:06 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:37:06 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:37:06 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 17:39:15 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:39:15 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:39:15 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:39:15 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:39:15 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:39:15 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:39:16 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:39:16 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:39:17 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:39:17 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:39:18 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:39:25 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:39:25 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:39:25 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 17:40:50 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:40:50 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:40:50 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:40:50 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:40:50 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:40:51 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:40:51 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:40:51 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:40:52 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:40:52 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:40:53 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:41:00 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:41:00 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:41:00 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 17:43:04 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:43:04 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:43:04 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:43:04 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:43:04 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:43:04 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:43:04 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:43:04 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:43:05 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:43:06 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:43:06 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:43:14 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:43:14 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:43:14 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 17:58:18 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 17:58:18 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 17:58:18 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 17:58:18 - 0:00:00 - Load training set data
+INFO - 04/10/24 17:58:18 - 0:00:00 - Load development set data
+INFO - 04/10/24 17:58:18 - 0:00:00 - Load test set data
+INFO - 04/10/24 17:58:19 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 17:58:19 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:58:20 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 17:58:20 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 17:58:21 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 17:58:30 - 0:00:12 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 17:58:30 - 0:00:12 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 17:58:30 - 0:00:12 - ============== epoch 0 ==============
+INFO - 04/10/24 18:01:39 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 18:01:39 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 18:01:39 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 18:01:39 - 0:00:00 - Load training set data
+INFO - 04/10/24 18:01:39 - 0:00:00 - Load development set data
+INFO - 04/10/24 18:01:39 - 0:00:00 - Load test set data
+INFO - 04/10/24 18:01:39 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 18:01:40 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 18:01:41 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 18:01:41 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 18:01:41 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 18:01:49 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 18:01:49 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 18:01:49 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 18:02:54 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 18:02:54 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 18:02:54 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 18:02:54 - 0:00:00 - Load training set data
+INFO - 04/10/24 18:02:54 - 0:00:00 - Load development set data
+INFO - 04/10/24 18:02:54 - 0:00:00 - Load test set data
+INFO - 04/10/24 18:02:55 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 18:02:55 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 18:02:56 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 18:02:56 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 18:02:57 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 18:03:05 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 18:03:05 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 18:03:05 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 19:16:48 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 19:16:48 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 19:16:48 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 19:16:48 - 0:00:00 - Load training set data
+INFO - 04/10/24 19:18:57 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 19:18:57 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 19:18:57 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 19:18:57 - 0:00:00 - Load training set data
+INFO - 04/10/24 19:49:07 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 19:49:07 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 19:49:07 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 19:49:07 - 0:00:00 - Load training set data
+INFO - 04/10/24 19:49:07 - 0:00:00 - Load development set data
+INFO - 04/10/24 19:49:07 - 0:00:00 - Load test set data
+INFO - 04/10/24 19:49:07 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 19:49:08 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 19:49:08 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 19:49:09 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 19:49:09 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 19:49:17 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 19:49:17 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 19:49:17 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 19:54:19 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 19:54:19 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 19:54:19 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 19:54:19 - 0:00:00 - Load training set data
+INFO - 04/10/24 19:54:19 - 0:00:00 - Load development set data
+INFO - 04/10/24 19:54:19 - 0:00:00 - Load test set data
+INFO - 04/10/24 19:54:19 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 19:54:20 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 19:54:21 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 19:54:21 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 19:54:21 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 19:54:30 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 19:54:30 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 19:54:30 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 20:05:42 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:05:42 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:05:42 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:05:42 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:05:43 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:05:43 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:05:43 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:05:43 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:05:44 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:05:44 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:05:45 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:05:53 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:05:53 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:05:53 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 20:06:48 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:06:48 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:06:48 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:06:48 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:06:49 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:06:49 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:06:49 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:06:49 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:06:50 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:06:50 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:06:51 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:06:59 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:06:59 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:06:59 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 20:07:18 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:07:18 - 0:00:00 - batch_size: 1
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:07:18 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:07:18 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:07:18 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:07:18 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:07:18 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:07:19 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:07:19 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:07:20 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:07:20 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:07:28 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:07:28 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:07:28 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 20:32:26 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:32:26 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:32:26 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:32:26 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:32:26 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:32:27 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:32:27 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:32:27 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:32:28 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:32:28 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:32:29 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:32:38 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:32:38 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:32:38 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 20:35:54 - 0:03:27 - Finish training epoch 0. loss: 0.1387
+INFO - 04/10/24 20:35:54 - 0:03:27 - ============== Evaluate epoch 0 on Dev Set ==============
+INFO - 04/10/24 20:37:07 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:37:07 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:37:07 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:37:07 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:37:07 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:37:08 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:37:08 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:37:08 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:37:09 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:37:09 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:37:10 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:37:18 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:37:18 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:37:18 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 20:40:37 - 0:03:30 - Finish training epoch 0. loss: 0.1387
+INFO - 04/10/24 20:40:37 - 0:03:30 - ============== Evaluate epoch 0 on Dev Set ==============
+INFO - 04/10/24 20:42:44 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:42:44 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:42:44 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:42:44 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:42:44 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:42:44 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:42:44 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:42:44 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:42:45 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:42:46 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:42:46 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:42:54 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:42:54 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:42:54 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 20:46:13 - 0:03:30 - Finish training epoch 0. loss: 0.1387
+INFO - 04/10/24 20:46:13 - 0:03:30 - ============== Evaluate epoch 0 on Dev Set ==============
+INFO - 04/10/24 20:56:46 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:56:46 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:56:46 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:56:46 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:56:46 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:56:46 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:56:46 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:56:47 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:56:48 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:56:48 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:56:48 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:56:57 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:56:57 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:56:57 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 20:56:57 - 0:00:11 - ============== Evaluate epoch 0 on Dev Set ==============
+INFO - 04/10/24 20:58:18 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:58:18 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:58:18 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:58:18 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:58:18 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:58:19 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:58:19 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:58:19 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:58:20 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:58:20 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:58:21 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:58:28 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:58:28 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:58:28 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 20:58:28 - 0:00:10 - ============== Evaluate epoch 0 on Dev Set ==============
+INFO - 04/10/24 20:58:55 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:58:55 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:58:55 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:58:55 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:58:55 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:58:56 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:58:56 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:58:56 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:58:57 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:58:57 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:58:58 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:59:06 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:59:06 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:59:06 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 20:59:06 - 0:00:10 - ============== Evaluate epoch 0 on Dev Set ==============
+INFO - 04/10/24 20:59:38 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 20:59:38 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 20:59:38 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 20:59:38 - 0:00:00 - Load training set data
+INFO - 04/10/24 20:59:38 - 0:00:00 - Load development set data
+INFO - 04/10/24 20:59:38 - 0:00:00 - Load test set data
+INFO - 04/10/24 20:59:38 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 20:59:38 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:59:39 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 20:59:39 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 20:59:40 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 20:59:47 - 0:00:10 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 20:59:47 - 0:00:10 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 20:59:47 - 0:00:10 - ============== epoch 0 ==============
+INFO - 04/10/24 20:59:47 - 0:00:10 - ============== Evaluate epoch 0 on Dev Set ==============
+INFO - 04/10/24 21:01:06 - 0:00:00 - ============ Initialized logger ============
+INFO - 04/10/24 21:01:06 - 0:00:00 - batch_size: 16
+                                     bilstm: False
+                                     ckpt: 
+                                     coach: False
+                                     conll: True
+                                     dropout: 0
+                                     dump_path: experiments\ai_split_pretrain_then_finetunee\1
+                                     early_stop: 8
+                                     emb_dim: 300
+                                     emb_file: ../glove/glove.6B.300d.txt
+                                     entity_enc_hidden_dim: 300
+                                     entity_enc_layers: 1
+                                     epoch: 300
+                                     exp_id: 1
+                                     exp_name: ai_split_pretrain_then_finetunee
+                                     hidden_dim: 768
+                                     joint: False
+                                     logger_filename: train.log
+                                     lr: 5e-05
+                                     lstm_hidden_dim: 256
+                                     model_name: bert-base-cased
+                                     n_layer: 2
+                                     n_samples: -1
+                                     newbert: True
+                                     num_tag: 35
+                                     seed: 555
+                                     span_num_labels: 3
+                                     tgt_dm: ai
+                                     usechar: False
+INFO - 04/10/24 21:01:06 - 0:00:00 - The experiment will be stored in experiments\ai_split_pretrain_then_finetunee\1
+                                     
+INFO - 04/10/24 21:01:06 - 0:00:00 - Load training set data
+INFO - 04/10/24 21:01:06 - 0:00:00 - Load development set data
+INFO - 04/10/24 21:01:06 - 0:00:00 - Load test set data
+INFO - 04/10/24 21:01:07 - 0:00:01 - train size: 100; dev size 350; test size: 431;
+DEBUG - 04/10/24 21:01:07 - 0:00:01 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 21:01:08 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+DEBUG - 04/10/24 21:01:08 - 0:00:02 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/config.json HTTP/1.1" 200 0
+DEBUG - 04/10/24 21:01:08 - 0:00:03 - https://huggingface.co:443 "HEAD /bert-base-cased/resolve/main/generation_config.json HTTP/1.1" 404 0
+INFO - 04/10/24 21:01:16 - 0:00:11 - conll2003 dataset: train size: 14040; dev size 3249; test size: 3452
+INFO - 04/10/24 21:01:16 - 0:00:11 - Pretraining on conll2003 NER dataset ...
+INFO - 04/10/24 21:01:16 - 0:00:11 - ============== epoch 0 ==============
+INFO - 04/10/24 21:01:16 - 0:00:11 - ============== Evaluate epoch 0 on Dev Set ==============

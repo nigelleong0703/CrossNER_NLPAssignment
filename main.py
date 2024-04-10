@@ -5,6 +5,7 @@ from src.dataloader import (
     get_conll2003_dataloader,
     get_dataloader_for_bilstmtagger,
     get_dataloader_split,
+    get_conll2003_dataloader_split,
 )
 from src.trainer import BaseTrainer, BertSpanTypeTrainer
 from src.model import BertTagger, BiLSTMTagger, NewBertTagger, BertSpan, BertType
@@ -84,7 +85,7 @@ def train(params):
     if params.conll and not params.joint:
         if params.newbert:
             conll_trainloader, conll_devloader, conll_testloader = (
-                get_conll2003_dataloader(params.batch_size, params.tgt_dm)
+                get_conll2003_dataloader_split(params.batch_size, params.tgt_dm)
             )
             trainer.train_conll(
                 conll_trainloader, conll_devloader, conll_testloader, params.tgt_dm
@@ -141,12 +142,15 @@ def train(params):
             )
         elif params.newbert:
             loss_list, loss_span_list, loss_type_list = [], [], []
-            for i, (X, span_labels, Y) in pbar:
+            for i, (X, span_labels, Y, real_Y) in pbar:
                 X = X.cuda()
                 span_labels = span_labels.cuda()
                 Y = Y.cuda()
+                real_Y = real_Y.cuda()
 
-                loss, loss_span, loss_type = trainer.train_step(X, span_labels, Y)
+                loss, loss_span, loss_type = trainer.train_step(
+                    X, span_labels, Y, real_Y
+                )
                 loss_list.append(loss)
                 loss_span_list.append(loss_span)
                 loss_type_list.append(loss_type)
