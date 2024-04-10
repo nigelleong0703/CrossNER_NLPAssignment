@@ -69,7 +69,7 @@ class BertSpanTypeTrainer(object):
         y_list = []
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
         for i, (X, span, Y, real_Y) in pbar:
-            y_list.extend(Y.data.numpy())
+            y_list.extend(real_Y.data.numpy())
             X = X.cuda()
             span = span.cuda()
             Y = Y.cuda()
@@ -82,11 +82,9 @@ class BertSpanTypeTrainer(object):
             span_predictions = torch.argmax(
                 output_span[0], dim=-1
             )  # Assuming output_span is [batch_size, seq_length, num_span_labels]
-            print(span_predictions)
             type_predictions = torch.argmax(
                 output_type[0], dim=-1
             )  # Assuming output_type is [batch_size, seq_length, num_type_labels]
-            print(type_predictions)
 
             combined_indices = []
 
@@ -96,18 +94,13 @@ class BertSpanTypeTrainer(object):
                     span_predictions.size(1)
                 ):  # Loop through sequence length
                     span_pred = span_labels[span_predictions[i, j].item()]
-                    print(tgt_dm)
-                    print(domain2labels_only[tgt_dm])
-                    try:
-                        type_pred = domain2labels_only[tgt_dm][
-                            type_predictions[i, j].item()
-                        ]
-                    except Exception as e:
-                        print(e)
-                        print(i)
-                        print(j)
-                        print(type_predictions[i, j].item())
 
+                    type_pred_index = type_predictions[i, j].item()
+                    if type_pred_index >= len(domain2labels_only[tgt_dm]):
+                        type_pred_index = (
+                            len(domain2labels_only[tgt_dm]) - 1
+                        )  # Use last index if out of bounds
+                    type_pred = domain2labels_only[tgt_dm][type_pred_index]
                     combined_label = (
                         "O"
                         if span_pred == "O" or type_pred == "O"
@@ -123,7 +116,6 @@ class BertSpanTypeTrainer(object):
             pred_list.extend(np.array(combined_indices))
 
         pred_list = np.concatenate(pred_list, axis=0)
-        print(pred_list.shape)
         # pred_list = np.argmax(pred_list, axis=1)
         y_list = np.concatenate(y_list, axis=0)
 
@@ -131,7 +123,7 @@ class BertSpanTypeTrainer(object):
         pred_list = list(pred_list)
         y_list = list(y_list)
         lines = []
-        for pred_index, gold_ndex in zip(pred_list, y_list):
+        for pred_index, gold_index in zip(pred_list, y_list):
             gold_index = int(gold_index)
             if gold_index != pad_token_label_id:
                 pred_token = domain2labels[tgt_dm][pred_index]
@@ -163,30 +155,30 @@ class BertSpanTypeTrainer(object):
             loss_span_list = []
             loss_type_list = []
 
-            # pbar = tqdm(enumerate(dataloader_train), total=len(dataloader_train))
-            # for i, (X, labels_bio, y, real_y) in pbar:
-            #     X, labels_bio, y = X.cuda(), labels_bio.cuda(), y.cuda()
-            #     real_y = real_y.cuda()
+            pbar = tqdm(enumerate(dataloader_train), total=len(dataloader_train))
+            for i, (X, labels_bio, y, real_y) in pbar:
+                X, labels_bio, y = X.cuda(), labels_bio.cuda(), y.cuda()
+                real_y = real_y.cuda()
 
-            #     loss, loss_span, loss_type = self.train_step(X, labels_bio, y, real_y)
-            #     loss_list.append(loss)
-            #     loss_span_list.append(loss_span)
-            #     loss_type_list.append(loss_type)
-            #     pbar.set_description(
-            #         "(Epoch {}) LOSS:{:.4f} LOSS_SPAN:{:.4f} LOSS_TYPE:{:.4f}".format(
-            #             e,
-            #             np.mean(loss_list),
-            #             np.mean(loss_span_list),
-            #             np.mean(loss_type_list),
-            #         )
-            #     )
-            #     # pbar.set_description(
-            #     #     "(Epoch {}) LOSS:{:.4f}".format(e, np.mean(loss_list))
-            #     # )
+                loss, loss_span, loss_type = self.train_step(X, labels_bio, y, real_y)
+                loss_list.append(loss)
+                loss_span_list.append(loss_span)
+                loss_type_list.append(loss_type)
+                pbar.set_description(
+                    "(Epoch {}) LOSS:{:.4f} LOSS_SPAN:{:.4f} LOSS_TYPE:{:.4f}".format(
+                        e,
+                        np.mean(loss_list),
+                        np.mean(loss_span_list),
+                        np.mean(loss_type_list),
+                    )
+                )
+                # pbar.set_description(
+                #     "(Epoch {}) LOSS:{:.4f}".format(e, np.mean(loss_list))
+                # )
 
-            # logger.info(
-            #     "Finish training epoch %d. loss: %.4f" % (e, np.mean(loss_list))
-            # )
+            logger.info(
+                "Finish training epoch %d. loss: %.4f" % (e, np.mean(loss_list))
+            )
 
             logger.info(
                 "============== Evaluate epoch %d on Dev Set ==============" % e
