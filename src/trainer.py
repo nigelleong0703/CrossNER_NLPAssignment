@@ -62,7 +62,7 @@ class BertSpanTypeTrainer(object):
 
         return loss.item(), loss_span.item(), loss_type.item()
 
-    def evaluate(self, dataloader, tgt_dm):
+    def evaluate(self, dataloader, tgt_dm, use_bilstm=False):
         self.span_model.eval()
         self.type_model.eval()
         pred_list = []

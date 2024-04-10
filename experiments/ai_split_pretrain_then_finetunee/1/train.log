@@ -2030,3 +2030,15 @@ INFO - 04/10/24 21:25:58 - 0:03:31 - ============== Evaluate epoch 0 on Dev Set 
 INFO - 04/10/24 21:26:47 - 0:04:20 - Evaluate on Dev Set. F1: 93.7052.
 INFO - 04/10/24 21:26:47 - 0:04:20 - Found better model!!
 INFO - 04/10/24 21:26:47 - 0:04:20 - ============== epoch 1 ==============
+INFO - 04/10/24 21:32:07 - 0:09:40 - Finish training epoch 1. loss: 0.0379
+INFO - 04/10/24 21:32:07 - 0:09:40 - ============== Evaluate epoch 1 on Dev Set ==============
+INFO - 04/10/24 21:32:54 - 0:10:27 - Evaluate on Dev Set. F1: 93.9625.
+INFO - 04/10/24 21:32:54 - 0:10:27 - Found better model!!
+INFO - 04/10/24 21:32:54 - 0:10:27 - ============== Evaluate on Test Set ==============
+INFO - 04/10/24 21:33:35 - 0:11:08 - Evaluate on Test Set. F1: 89.9266.
+
+INFO - 04/10/24 21:33:35 - 0:11:08 - Training on target domain ...
+INFO - 04/10/24 21:33:35 - 0:11:08 - ============== epoch 0 ==============
+INFO - 04/10/24 21:33:43 - 0:11:15 - Finish training epoch 0. loss: 2.5672. loss_span: 0.5992. loss_type: 1.9680
+INFO - 04/10/24 21:33:43 - 0:11:15 - ============== Evaluate epoch 0 on Train Set ==============
+INFO - 04/10/24 21:35:26 - 0:00:00 - ============ Initialized logger ============
