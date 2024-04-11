@@ -1,3 +1,6 @@
 .DS_Store
 corpus/
 checking_data.py
+experiments/
+src/__pycache__/
+src/coach/__pycache__/

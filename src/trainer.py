@@ -34,7 +34,7 @@ class BertSpanTypeTrainer(object):
 
     def train_step(self, X, labels_bio, y, real_Y):
         """
-        need to return: loss, loss_span and loss_type
+        need to return: loss, loss_span and loss_type, accuracy_span and accuracy_type
         """
         self.span_model.train()
         self.type_model.train()
@@ -60,19 +60,85 @@ class BertSpanTypeTrainer(object):
         loss.backward()
         self.optimizer.step()
 
-        return loss.item(), loss_span.item(), loss_type.item()
+        # Convert logits to categorical predictions
+        span_predictions = torch.argmax(
+            output_span[0], dim=-1
+        )  # Assuming output_span is [batch_size, seq_length, num_span_labels]
+        type_predictions = torch.argmax(
+            output_type[0], dim=-1
+        )  # Assuming output_type is [batch_size, seq_length, num_type_labels]
+
+        ####
+        # Calculate accuracy of the span
+        ####
+
+        # Create a mask for non-padding tokens (tokens to be included in accuracy calculation)
+        mask = labels_bio != pad_token_label_id
+
+        # Apply the mask to filter out padding tokens
+        predictions_masked = torch.masked_select(span_predictions, mask)
+        true_labels_masked = torch.masked_select(labels_bio, mask)
+
+        # Calculate correct predictions
+        correct_predictions = (predictions_masked == true_labels_masked).sum().item()
+
+        # Calculate accuracy
+        accuracy_span = (
+            correct_predictions / true_labels_masked.size(0)
+            if true_labels_masked.size(0) > 0
+            else 0.0
+        )
+
+        ##########
+        # Calcultae accuracy of the type
+        ##########
+
+        # Create a mask for non-padding tokens (tokens to be included in accuracy calculation)
+        mask = y != pad_token_label_id
+
+        # Apply the mask to filter out padding tokens
+        predictions_masked_type = torch.masked_select(type_predictions, mask)
+        true_labels_masked_type = torch.masked_select(y, mask)
+
+        # Calculate correct predictions
+        correct_predictions_type = (
+            (predictions_masked_type == true_labels_masked_type).sum().item()
+        )
+
+        # Calculate accuracy
+        accuracy_type = (
+            correct_predictions_type / true_labels_masked_type.size(0)
+            if true_labels_masked_type.size(0) > 0
+            else 0.0
+        )
+
+        return (
+            loss.item(),
+            loss_span.item(),
+            loss_type.item(),
+            accuracy_span,
+            accuracy_type,
+        )
 
     def evaluate(self, dataloader, tgt_dm, use_bilstm=False):
         self.span_model.eval()
         self.type_model.eval()
         pred_list = []
         y_list = []
+        # span_list = []
+        # type_list = []
+        # span_pred_list = []
+        # type_pred_list = []
+        correct_span_predictions = 0
+        correct_label_predictions = 0
+        num_of_spans = 0
+        num_of_labels = 0
         pbar = tqdm(enumerate(dataloader), total=len(dataloader))
-        for i, (X, span, Y, real_Y) in pbar:
+        for i, (X, span, y, real_Y) in pbar:
             y_list.extend(real_Y.data.numpy())
             X = X.cuda()
             span = span.cuda()
-            Y = Y.cuda()
+            y = y.cuda()
             real_Y = real_Y.cuda()
 
             output_span = self.span_model(X)
@@ -82,9 +148,49 @@ class BertSpanTypeTrainer(object):
             span_predictions = torch.argmax(
                 output_span[0], dim=-1
             )  # Assuming output_span is [batch_size, seq_length, num_span_labels]
+            # Calculate accuracy
+            mask = span != pad_token_label_id
+            # Apply the mask to filter out padding tokens
+            predictions_masked = torch.masked_select(span_predictions, mask)
+            true_labels_masked = torch.masked_select(span, mask)
+            # Calculate correct predictions
+            correct_span_predictions += (
+                (predictions_masked == true_labels_masked).sum().item()
+            )
+            num_of_spans += true_labels_masked.size(0)
+
             type_predictions = torch.argmax(
                 output_type[0], dim=-1
             )  # Assuming output_type is [batch_size, seq_length, num_type_labels]
+
+            # Calculate accuracy
+            # Create a mask for non-padding tokens (tokens to be included in accuracy calculation)
+            mask = y != pad_token_label_id
+            # Apply the mask to filter out padding tokens
+            predictions_masked_type = torch.masked_select(type_predictions, mask)
+            true_labels_masked_type = torch.masked_select(y, mask)
+            print(y)
+            print(predictions_masked_type)
+            print(true_labels_masked_type)
+            y_flat = y.view(y.size(0) * y.size(1))
+            output_type_flat = output_type[0].view(
+                output_type[0].size(0) * output_type[0].size(1), output_type[0].size(2)
+            )
+            loss_type = self.loss_fn(output_type_flat, y_flat)
+            print(loss_type.item())
+
+            # Calculate correct predictions
+            correct_label_predictions_single = (
+                (predictions_masked_type == true_labels_masked_type).sum().item()
+            )
+            correct_label_predictions += correct_label_predictions_single
+            num_of_labels += true_labels_masked_type.size(0)
+            accuracy_type = (
+                correct_label_predictions_single / true_labels_masked_type.size(0)
+                if true_labels_masked_type.size(0) > 0
+                else 0.0
+            )
+            pbar.set_description("ACC TYPE:{:.4f}".format(accuracy_type))
 
             combined_indices = []
 
@@ -96,10 +202,8 @@ class BertSpanTypeTrainer(object):
                     span_pred = span_labels[span_predictions[i, j].item()]
 
                     type_pred_index = type_predictions[i, j].item()
-                    if type_pred_index >= len(domain2labels_only[tgt_dm]):
-                        type_pred_index = (
-                            len(domain2labels_only[tgt_dm]) - 1
-                        )  # Use last index if out of bounds
+                    if type_pred_index > len(domain2labels_only[tgt_dm]):
+                        type_pred_index = 0  # Use "O" if out of bounds
                     type_pred = domain2labels_only[tgt_dm][type_pred_index]
                     combined_label = (
                         "O"
@@ -114,6 +218,9 @@ class BertSpanTypeTrainer(object):
 
             # pred_list.extend(combined_indices.numpy())
             pred_list.extend(np.array(combined_indices))
+            print(real_Y.data.cpu().numpy())
+            print(combined_indices)
+            exit()
 
         pred_list = np.concatenate(pred_list, axis=0)
         # pred_list = np.argmax(pred_list, axis=1)
@@ -132,7 +239,17 @@ class BertSpanTypeTrainer(object):
         results = conll2002_measure(lines)
         f1 = results["fb1"]
 
-        return f1
+        acc_span = correct_span_predictions / num_of_spans if num_of_spans > 0 else 0.0
+
+        acc_type = (
+            correct_label_predictions / num_of_labels if num_of_labels > 0 else 0.0
+        )
+        print(correct_span_predictions)
+        print(num_of_spans)
+        print(correct_label_predictions)
+        print(num_of_labels)
+
+        return f1, acc_span, acc_type
 
     def save_model(self):
         saved_path = os.path.join(self.params.dump_path, "best_finetune_model.pth")
@@ -154,37 +271,59 @@ class BertSpanTypeTrainer(object):
             loss_list = []
             loss_span_list = []
             loss_type_list = []
+            accuracy_span_list = []
+            accuracy_type_list = []
 
             pbar = tqdm(enumerate(dataloader_train), total=len(dataloader_train))
             for i, (X, labels_bio, y, real_y) in pbar:
                 X, labels_bio, y = X.cuda(), labels_bio.cuda(), y.cuda()
                 real_y = real_y.cuda()
 
-                loss, loss_span, loss_type = self.train_step(X, labels_bio, y, real_y)
+                loss, loss_span, loss_type, accuracy_span, accuracy_title = (
+                    self.train_step(X, labels_bio, y, real_y)
+                )
                 loss_list.append(loss)
                 loss_span_list.append(loss_span)
                 loss_type_list.append(loss_type)
+                accuracy_span_list.append(accuracy_span)
+                accuracy_type_list.append(accuracy_title)
                 pbar.set_description(
-                    "(Epoch {}) LOSS:{:.4f} LOSS_SPAN:{:.4f} LOSS_TYPE:{:.4f}".format(
+                    "(Epoch {}) LOSS:{:.4f} LOSS_SPAN:{:.4f} LOSS_TYPE:{:.4f} ACC_SPAN:{:.4f} ACC_TYPE:{:.4f}".format(
                         e,
                         np.mean(loss_list),
                         np.mean(loss_span_list),
                         np.mean(loss_type_list),
+                        np.mean(accuracy_span_list),
+                        np.mean(accuracy_type_list),
                     )
                 )
                 # pbar.set_description(
                 #     "(Epoch {}) LOSS:{:.4f}".format(e, np.mean(loss_list))
                 # )
 
+            # logger.info(
+            #     "Finish training epoch %d. loss: %.4f" % (e, np.mean(loss_list))
+            # )
             logger.info(
-                "Finish training epoch %d. loss: %.4f" % (e, np.mean(loss_list))
+                "Finish training epoch %d. loss: %.4f. loss_span: %.4f. loss_type: %.4f ACC SPAN: %.4f ACC TYPE: %.4f"
+                % (
+                    e,
+                    np.mean(loss_list),
+                    np.mean(loss_span_list),
+                    np.mean(loss_type_list),
+                    np.mean(accuracy_span_list),
+                    np.mean(accuracy_type_list),
+                )
             )
 
             logger.info(
                 "============== Evaluate epoch %d on Dev Set ==============" % e
             )
-            f1_dev = self.evaluate(dataloader_dev, tgt_dm)
-            logger.info("Evaluate on Dev Set. F1: %.4f." % f1_dev)
+            f1_dev, acc_span, acc_type = self.evaluate(dataloader_dev, tgt_dm)
+            # logger.info("Evaluate on Dev Set. F1: %.4f." % f1_dev)
+            logger.info(
+                f"Evaluate on Dev Set. F1: {f1_dev:.4f}, Span Accuracy: {acc_span:.4f}, Type Accuracy: {acc_type:.4f}."
+            )
 
             if f1_dev > best_f1:
                 logger.info("Found better model!!")
@@ -200,8 +339,11 @@ class BertSpanTypeTrainer(object):
                 break
 
         logger.info("============== Evaluate on Test Set ==============")
-        f1_test = self.evaluate(dataloader_test, tgt_dm)
-        logger.info("Evaluate on Test Set. F1: %.4f." % f1_test)
+        f1_test, acc_span, acc_type = self.evaluate(dataloader_test, tgt_dm)
+        # logger.info("Evaluate on Test Set. F1: %.4f." % f1_test)
+        logger.info(
+            f"Evaluate on Test Set. F1: {f1_test:.4f}, Span Accuracy: {acc_span:.4f}, Type Accuracy: {acc_type:.4f}."
+        )
 
 
 class BaseTrainer(object):

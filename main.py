@@ -142,34 +142,43 @@ def train(params):
             )
         elif params.newbert:
             loss_list, loss_span_list, loss_type_list = [], [], []
+            accuracy_span_list, accuracy_type_list = [], []
             for i, (X, span_labels, Y, real_Y) in pbar:
                 X = X.cuda()
                 span_labels = span_labels.cuda()
                 Y = Y.cuda()
                 real_Y = real_Y.cuda()
 
-                loss, loss_span, loss_type = trainer.train_step(
-                    X, span_labels, Y, real_Y
+                loss, loss_span, loss_type, accuracy_span, accuracy_type = (
+                    trainer.train_step(X, span_labels, Y, real_Y)
                 )
                 loss_list.append(loss)
                 loss_span_list.append(loss_span)
                 loss_type_list.append(loss_type)
+                accuracy_span_list.append(accuracy_span)
+                accuracy_type_list.append(accuracy_type)
                 pbar.set_description(
-                    "(Epoch {}) LOSS:{:.4f}; LOSS SPAN:{:.4f}; LOSS TYPE:{:.4f}".format(
+                    "(Epoch {}) LOSS:{:.4f}; LOSS SPAN:{:.4f}; LOSS TYPE:{:.4f}; ACC SPAN:{:.4f}; ACC TYPE{:.4f}".format(
                         e,
                         np.mean(loss_list),
                         np.mean(loss_span_list),
                         np.mean(loss_type_list),
+                        # np.mean(accuracy_span_list),
+                        # np.mean(accuracy_type_list),
+                        accuracy_span,
+                        accuracy_type,
                     )
                 )
 
             logger.info(
-                "Finish training epoch %d. loss: %.4f. loss_span: %.4f. loss_type: %.4f"
+                "Finish training epoch %d. loss: %.4f. loss_span: %.4f. loss_type: %.4f ACC SPAN: %.4f ACC TYPE: %.4f"
                 % (
                     e,
                     np.mean(loss_list),
                     np.mean(loss_span_list),
                     np.mean(loss_type_list),
+                    np.mean(accuracy_span_list),
+                    np.mean(accuracy_type_list),
                 )
             )
 
@@ -188,38 +197,94 @@ def train(params):
                 "Finish training epoch %d. loss: %.4f" % (e, np.mean(loss_list))
             )
 
-        logger.info("============== Evaluate epoch %d on Train Set ==============" % e)
-        f1_train = trainer.evaluate(
-            dataloader_train, params.tgt_dm, use_bilstm=params.bilstm
-        )
-        logger.info("Evaluate on Train Set. F1: %.4f." % f1_train)
-
-        logger.info("============== Evaluate epoch %d on Dev Set ==============" % e)
-        f1_dev = trainer.evaluate(
-            dataloader_dev, params.tgt_dm, use_bilstm=params.bilstm
-        )
-        logger.info("Evaluate on Dev Set. F1: %.4f." % f1_dev)
-
-        logger.info("============== Evaluate epoch %d on Test Set ==============" % e)
-        f1_test = trainer.evaluate(
-            dataloader_test, params.tgt_dm, use_bilstm=params.bilstm
-        )
-        logger.info("Evaluate on Test Set. F1: %.4f." % f1_test)
-
-        if f1_dev > best_f1:
-            logger.info("Found better model!!")
-            best_f1 = f1_dev
-            no_improvement_num = 0
-            trainer.save_model()
-        else:
-            no_improvement_num += 1
+        if params.newbert:
             logger.info(
-                "No better model found (%d/%d)"
-                % (no_improvement_num, params.early_stop)
+                "============== Evaluate epoch %d on Train Set ==============" % e
+            )
+            f1_train, acc_span, acc_type = trainer.evaluate(
+                dataloader_train, params.tgt_dm, use_bilstm=params.bilstm
+            )
+            # logger.info("Evaluate on Train Set. F1: %.4f." % f1_train)
+            logger.info(
+                f"Evaluate on Train Set. F1: {f1_train:.4f}, Span Accuracy: {acc_span:.4f}, Type Accuracy: {acc_type:.4f}."
             )
 
-        if no_improvement_num >= params.early_stop:
-            break
+            logger.info(
+                "============== Evaluate epoch %d on Dev Set ==============" % e
+            )
+            f1_dev, acc_span, acc_type = trainer.evaluate(
+                dataloader_dev, params.tgt_dm, use_bilstm=params.bilstm
+            )
+            # logger.info("Evaluate on Dev Set. F1: %.4f." % f1_dev)
+            logger.info(
+                f"Evaluate on Dev Set. F1: {f1_dev:.4f}, Span Accuracy: {acc_span:.4f}, Type Accuracy: {acc_type:.4f}."
+            )
+
+            logger.info(
+                "============== Evaluate epoch %d on Test Set ==============" % e
+            )
+            f1_test, acc_span, acc_type = trainer.evaluate(
+                dataloader_test, params.tgt_dm, use_bilstm=params.bilstm
+            )
+            # logger.info("Evaluate on Test Set. F1: %.4f." % f1_test)
+            logger.info(
+                f"Evaluate on Test Set. F1: {f1_test:.4f}, Span Accuracy: {acc_span:.4f}, Type Accuracy: {acc_type:.4f}."
+            )
+
+            if f1_dev > best_f1:
+                logger.info("Found better model!!")
+                best_f1 = f1_dev
+                no_improvement_num = 0
+                trainer.save_model()
+            else:
+                no_improvement_num += 1
+                logger.info(
+                    "No better model found (%d/%d)"
+                    % (no_improvement_num, params.early_stop)
+                )
+
+            if no_improvement_num >= params.early_stop:
+                break
+
+        else:
+            logger.info(
+                "============== Evaluate epoch %d on Train Set ==============" % e
+            )
+            f1_train = trainer.evaluate(
+                dataloader_train, params.tgt_dm, use_bilstm=params.bilstm
+            )
+            logger.info("Evaluate on Train Set. F1: %.4f." % f1_train)
+
+            logger.info(
+                "============== Evaluate epoch %d on Dev Set ==============" % e
+            )
+            f1_dev = trainer.evaluate(
+                dataloader_dev, params.tgt_dm, use_bilstm=params.bilstm
+            )
+            logger.info("Evaluate on Dev Set. F1: %.4f." % f1_dev)
+
+            logger.info(
+                "============== Evaluate epoch %d on Test Set ==============" % e
+            )
+            f1_test = trainer.evaluate(
+                dataloader_test, params.tgt_dm, use_bilstm=params.bilstm
+            )
+            logger.info("Evaluate on Test Set. F1: %.4f." % f1_test)
+
+            if f1_dev > best_f1:
+                logger.info("Found better model!!")
+                best_f1 = f1_dev
+                no_improvement_num = 0
+                trainer.save_model()
+            else:
+                no_improvement_num += 1
+                logger.info(
+                    "No better model found (%d/%d)"
+                    % (no_improvement_num, params.early_stop)
+                )
+
+            if no_improvement_num >= params.early_stop:
+                break
 
 
 if __name__ == "__main__":

@@ -103,7 +103,7 @@ class BertSpan(nn.Module):
         self.model = AutoModelWithLMHead.from_pretrained(
             params.model_name, config=config
         )
-        self.dropout = nn.Dropout(0)
+        self.dropout = nn.Dropout(params.dropout)
         self.classifier_bio = nn.Linear(config.hidden_size, params.span_num_labels)
         self.classifier_bio_tgt = nn.Linear(config.hidden_size, params.span_num_labels)
 
@@ -167,14 +167,16 @@ class BertType(nn.Module):
     def __init__(self, params):
         super(BertType, self).__init__()
         self.num_tag = params.num_tag
+        self.num_src_tag = params
         config = AutoConfig.from_pretrained(params.model_name)
         config.output_hidden_states = True
         self.model = AutoModelWithLMHead.from_pretrained(
             params.model_name, config=config
         )
         # self.dropout(0)
-        self.dropout = nn.Dropout(0)
+        self.dropout = nn.Dropout(params.dropout)
         self.classifier = nn.Linear(config.hidden_size, self.num_tag)
+        # self.classifier_tgt = nn.Linear(config.hidden_size, self.num_tag)
         # self.init_weights()
 
     def forward(self, X, logits_bio=None, labels_type=None):
