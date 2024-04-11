@@ -169,15 +169,15 @@ class BertSpanTypeTrainer(object):
             # Apply the mask to filter out padding tokens
             predictions_masked_type = torch.masked_select(type_predictions, mask)
             true_labels_masked_type = torch.masked_select(y, mask)
-            print(y)
-            print(predictions_masked_type)
-            print(true_labels_masked_type)
+            # print(y)
+            # print(predictions_masked_type)
+            # print(true_labels_masked_type)
             y_flat = y.view(y.size(0) * y.size(1))
             output_type_flat = output_type[0].view(
                 output_type[0].size(0) * output_type[0].size(1), output_type[0].size(2)
             )
             loss_type = self.loss_fn(output_type_flat, y_flat)
-            print(loss_type.item())
+            # print(loss_type.item())
 
             # Calculate correct predictions
             correct_label_predictions_single = (
@@ -203,7 +203,7 @@ class BertSpanTypeTrainer(object):
 
                     type_pred_index = type_predictions[i, j].item()
                     if type_pred_index > len(domain2labels_only[tgt_dm]):
-                        type_pred_index = 0  # Use "O" if out of bounds
+                        type_pred_index = 0  # Use "O" if out of boundsa
                     type_pred = domain2labels_only[tgt_dm][type_pred_index]
                     combined_label = (
                         "O"
@@ -218,9 +218,9 @@ class BertSpanTypeTrainer(object):
 
             # pred_list.extend(combined_indices.numpy())
             pred_list.extend(np.array(combined_indices))
-            print(real_Y.data.cpu().numpy())
-            print(combined_indices)
-            exit()
+            # print(real_Y.data.cpu().numpy())
+            # print(combined_indices)
+            # exit()
 
         pred_list = np.concatenate(pred_list, axis=0)
         # pred_list = np.argmax(pred_list, axis=1)
@@ -244,10 +244,10 @@ class BertSpanTypeTrainer(object):
         acc_type = (
             correct_label_predictions / num_of_labels if num_of_labels > 0 else 0.0
         )
-        print(correct_span_predictions)
-        print(num_of_spans)
-        print(correct_label_predictions)
-        print(num_of_labels)
+        # print(correct_span_predictions)
+        # print(num_of_spans)
+        # print(correct_label_predictions)
+        # print(num_of_labels)
 
         return f1, acc_span, acc_type
 
